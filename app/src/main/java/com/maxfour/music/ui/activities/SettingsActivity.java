@@ -24,8 +24,6 @@ import com.kabouzeid.appthemehelper.util.ColorUtil;
 import com.maxfour.music.R;
 import com.maxfour.music.appshortcuts.DynamicShortcutManager;
 import com.maxfour.music.misc.NonProAllowedColors;
-import com.maxfour.music.preferences.BlacklistPreference;
-import com.maxfour.music.preferences.BlacklistPreferenceDialog;
 import com.maxfour.music.preferences.LibraryPreference;
 import com.maxfour.music.preferences.LibraryPreferenceDialog;
 import com.maxfour.music.preferences.NowPlayingScreenPreference;
@@ -142,7 +140,6 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
             addPreferencesFromResource(R.xml.pref_lockscreen);
             addPreferencesFromResource(R.xml.pref_audio);
             addPreferencesFromResource(R.xml.pref_playlists);
-            addPreferencesFromResource(R.xml.pref_blacklist);
         }
 
         @Nullable
@@ -150,8 +147,6 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
         public DialogFragment onCreatePreferenceDialog(Preference preference) {
             if (preference instanceof NowPlayingScreenPreference) {
                 return NowPlayingScreenPreferenceDialog.newInstance();
-            } else if (preference instanceof BlacklistPreference) {
-                return BlacklistPreferenceDialog.newInstance();
             } else if (preference instanceof LibraryPreference) {
                 return LibraryPreferenceDialog.newInstance();
             }

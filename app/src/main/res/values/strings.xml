@@ -74,7 +74,6 @@
     <string name="biography">Biography</string>
     <string name="biography_unavailable">Couldn’t find a biography entry for this artist</string>
     <string name="black_theme_name">Black (AMOLED)</string>
-    <string name="blacklist">Blacklist</string>
     <string name="cancel">Cancel</string>
     <string name="cancel_current_timer">Cancel current timer</string>
     <string name="card">Card</string>

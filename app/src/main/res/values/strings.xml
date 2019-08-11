@@ -156,7 +156,7 @@
     <string name="mi_label_button_cta">Get started</string>
     <string name="min">" min."</string>
     <string name="my_top_songs">My top songs</string>
-    <string name="navoi_uzbekistan">Navoi, Uzbekistan</string>
+    <string name="myTeam">Duy Tính, Thiên Phúc, Anh Hào, Vietnamese</string>
     <string name="never">Never</string>
     <string name="new_playlist_title">New playlist</string>
     <string name="new_start_directory">%s is the new start directory</string>
@@ -269,7 +269,6 @@
     <string name="sort_order_artist">Artist</string>
     <string name="sort_order_year">Year</string>
     <string name="sort_order_z_a">Descending</string>
-    <string name="support_development">Support development</string>
     <string name="the_audio_file">The audio file</string>
     <string name="this_month">This month</string>
     <string name="this_week">This week</string>
@@ -288,7 +287,6 @@
     <string name="write_an_email">Write an email</string>
     <string name="x_has_been_set_as_ringtone">Set \"%1$s\" as your ringtone</string>
     <string name="x_selected">%1$d selected</string>
-    <string name="yandex_money">Yandex.Money</string>
     <string name="year">Year</string>
     <string name="you_have_to_select_at_least_one_category">You have to select at least one category</string>
 </resources>

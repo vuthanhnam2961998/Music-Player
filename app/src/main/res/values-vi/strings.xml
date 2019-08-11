@@ -156,7 +156,7 @@
     <string name="mi_label_button_cta">Bắt đầu</string>
     <string name="min">" min."</string>
     <string name="my_top_songs">Những bài hát hàng đầu</string>
-    <string name="navoi_uzbekistan">Navoi, Uzbekistan</string>
+    <string name="myTeam">Duy Tính, Thiên Phúc, Anh Hào, Vietnamese</string>
     <string name="never">Không bao giờ</string>
     <string name="new_playlist_title">Danh sách mới</string>
     <string name="new_start_directory">%s là thư mục bắt đầu</string>
@@ -269,7 +269,6 @@
     <string name="sort_order_artist">Nghệ sĩ</string>
     <string name="sort_order_year">Năm</string>
     <string name="sort_order_z_a">Giảm dần</string>
-    <string name="support_development">Hỗ trợ nhà phát triển</string>
     <string name="the_audio_file">Các tập tin âm thanh</string>
     <string name="this_month">Tháng này</string>
     <string name="this_week">Tuần này</string>
@@ -288,7 +287,6 @@
     <string name="write_an_email">Gửi email cho nhà phát triển</string>
     <string name="x_has_been_set_as_ringtone">đặt \"%1$s\" làm nhạc chuông</string>
     <string name="x_selected">đã chọn %1$d </string>
-    <string name="yandex_money">Yandex.Money</string>
     <string name="year">Year</string>
     <string name="you_have_to_select_at_least_one_category">Bạn phải chọn ít nhật một danh mục</string>
 </resources>

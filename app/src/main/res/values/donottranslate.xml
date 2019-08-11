@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="max_four" translatable="false">Max_Four</string>
+    <string name="myTeamCerticficate" translatable="false">Hào Phúc Tính</string>
 
-    <string name="webmoney" translatable="false">WebMoney</string>
+
 
     <string name="ym_account" translatable="false">4100 1537 2205 898</string>
 

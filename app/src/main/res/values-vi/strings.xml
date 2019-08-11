@@ -15,7 +15,7 @@
     <string name="action_go_to_artist">Đi đến nghệ sĩ</string>
     <string name="action_go_to_start_directory">Đi đến mục bắt đầu</string>
     <string name="action_grant">Grant</string>
-    <string name="action_grid_size">Grid size</string>
+    <string name="action_grid_size">Số bài hát trên 1 dòng</string>
     <string name="action_grid_size_land">Grid size (land)</string>
     <string name="action_new_playlist">Danh sách mới</string>
     <string name="action_next">Tiếp theo</string>
@@ -248,13 +248,13 @@
     <string name="saving_changes">Đang lưu</string>
     <string name="scan_media">Quét media</string>
     <string name="scanned_files">Đã quét: %1$d của %2$d</string>
-    <string name="search_hint">Tìm kiếm thư viên của bạn…</string>
+    <string name="search_hint">Tìm kiếm trong thư viên của bạn …</string>
     <string name="select_all_title">Chọn tất cả</string>
     <string name="set_artist_image">Đặt ảnh nghệ sĩ</string>
     <string name="sleep_timer_canceled">Đã huỷ bỏ thời gian nghĩ</string>
     <plurals name="sleep_timer_set">
         <item quantity="one">Bạn đã đặt  <xliff:g id="count">%1$d</xliff:g> phút từ lúc này </item>
-        <item quantity="other">Thời gian ngủ là <xliff:g id="count">%1$d</xliff:g> phúc từ lúc này</item>
+        <item quantity="other">Thời gian ngủ là <xliff:g id="count">%1$d</xliff:g> phút từ lúc này</item>
     </plurals>
     <string name="some_files_are_not_listed_in_the_media_store">Một số tập tin không thể đọc từ media store</string>
     <string name="song">Bài hát</string>

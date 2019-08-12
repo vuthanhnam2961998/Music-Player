@@ -79,7 +79,6 @@
     <string name="cancel_current_timer">Huỷ bỏ bộ đếm thời gian hiện tại</string>
     <string name="card">Thẻ</string>
     <string name="clear_action">Xoá</string>
-    <string name="clear_blacklist">Xoá danh sách đen</string>
     <string name="clear_playlist_title">Xoá danh sách phát</string>
     <string name="clear_playlist_x"><![CDATA[Xoá danh sách \"<b>%1$s</b>\"? Điều này không thể hoàn tác!]]></string>
     <string name="clipboard_dollar_wallet_number_copied">Dollar wallet number has been copied to clipboard</string>
@@ -112,9 +111,7 @@
     </plurals>
     <string name="dialog_ringtone_message">Co phép ứng dụng \"Âm nhạc\" sữa đổi nhạc chuông của bạn.</string>
     <string name="dialog_ringtone_title">Cài nhạc chuông</string>
-    <string name="do_you_want_to_clear_the_blacklist">Bạn có thật sự muốn xoá danh sách đen?</string>
-    <string name="do_you_want_to_remove_from_the_blacklist"><![CDATA[Bạn thật sự muốn xoá <b>%1$s</b> từ danh sách đen?]]></string>
-    <string name="download_from_last_fm">Tải xuống từ Last.fm</string>
+      <string name="download_from_last_fm">Tải xuống từ Last.fm</string>
     <string name="empty">Trống</string>
     <string name="equalizer">Bộ chỉnh âm</string>
     <string name="failed_to_save_playlist">Lưu lại thất bại (%s)</string>
@@ -195,7 +192,6 @@
     <string name="pref_header_playlists">Danh sách phát</string>
     <string name="pref_summary_album_art_on_lockscreen">Sử dụng bìa album bài hát hiện tại làm hình nền màn hình khóa</string>
     <string name="pref_summary_audio_ducking">Thông báo, điều hướng,...</string>
-    <string name="pref_summary_blacklist">Nội dung của các thư mục trong danh sách đen được ẩn khỏi thư viện của bạn</string>
     <string name="pref_summary_blurred_album_art">Làm mờ bìa album trên màn hình khóa. Có thể gây ra vấn đề với các ứng dụng và widget của bên thứ ba.</string>
     <string name="pref_summary_classic_notification">Sử dụng thông báo kiểu cổ điển</string>
     <string name="pref_summary_colored_app_shortcuts">Tô màu các phím tắt ứng dụng trong màu chính</string>
@@ -229,7 +225,6 @@
     <string name="recently_played">Nhạc đã nghe gần đây</string>
     <string name="remove_action">Xoá</string>
     <string name="remove_cover">Remove cover</string>
-    <string name="remove_from_blacklist">Xoá danh sách đen</string>
     <string name="remove_song_from_playlist_title">Xoá bài hát khỏi danh sách nhạc</string>
     <string name="remove_song_x_from_playlist"><![CDATA[Xoá bài hát \"<b>%1$s</b>\" từ danh sách này?]]></string>
     <string name="remove_songs_from_playlist_title">Xoá bài hát khỏi danh sách nhạc</string>

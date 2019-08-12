@@ -2,7 +2,6 @@
 ### Music Player features
 
 - Auto download artist art (MediaStore)
-- Black list
 - Folder browser
 - Now playing themes
 - Sleep timer

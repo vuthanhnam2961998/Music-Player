@@ -216,7 +216,6 @@
     <string name = "pref_title_last_added_interval"> Khoảng thời gian danh sách phát được thêm lần cuối </string>
     <string name="pref_title_navigation_bar"> Thanh điều hướng màu </string>
     <string name="pref_title_now_playing_screen_appearance">Giao diện phát nhạc</string>
-
     <string name = "pref_title_remember_shuffle"> Nhớ xáo trộn </string>
     <string name="pref_title_synchronized_lyrics_show"> Hiển thị lời bài hát được đồng bộ hóa </string>
     <string name="primary_color">Màu chủ đạo</string>

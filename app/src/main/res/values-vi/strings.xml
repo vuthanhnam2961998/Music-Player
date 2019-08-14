@@ -83,7 +83,6 @@
     <string name="clear_playlist_x"><![CDATA[Xoá danh sách \"<b>%1$s</b>\"? Điều này không thể hoàn tác!]]></string>
     <string name="clipboard_dollar_wallet_number_copied">Dollar wallet number has been copied to clipboard</string>
     <string name="clipboard_ruble_wallet_number_copied">Ruble wallet number has been copied to clipboard</string>
-
     <string name="could_not_create_playlist">Không thể tạo danh sách</string>
     <string name="could_not_download_album_cover">Không thể tải xuống bìa album</string>
     <string name="could_not_scan_files">Không thể quét thư mục %d</string>

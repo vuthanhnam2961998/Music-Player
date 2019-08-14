@@ -314,12 +314,6 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_artist_detail, menu);
-        menu.findItem(R.id.action_colored_footers).setChecked(usePalette);
-        return super.onCreateOptionsMenu(menu);
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -374,10 +368,6 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
             case R.id.action_reset_artist_image:
                 Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.updating), Toast.LENGTH_SHORT).show();
                 CustomArtistImageUtil.getInstance(ArtistDetailActivity.this).resetCustomArtistImage(artist);
-                return true;
-            case R.id.action_colored_footers:
-                item.setChecked(!item.isChecked());
-                setUsePalette(item.isChecked());
                 return true;
         }
         return super.onOptionsItemSelected(item);

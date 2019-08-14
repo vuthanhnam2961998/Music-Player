@@ -215,7 +215,7 @@
     <string name="pref_title_last_added_interval">Last added playlist interval</string>
     <string name="pref_title_navigation_bar">Colored navigation bar</string>
     <string name="pref_title_now_playing_screen_appearance">Appearance</string>
-    <string name="pref_title_remember_last_tab">Remember last tab</string>
+
     <string name="pref_title_remember_shuffle">Remember shuffle</string>
     <string name="pref_title_synchronized_lyrics_show">Show synchronized lyrics</string>
     <string name="primary_color">Primary color</string>

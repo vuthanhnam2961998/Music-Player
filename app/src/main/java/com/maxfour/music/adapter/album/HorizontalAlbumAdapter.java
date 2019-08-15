@@ -36,10 +36,10 @@ public class HorizontalAlbumAdapter extends AlbumAdapter { //Bo chuyen doi album
     }
 
     @Override
-    protected void setColors(int color, ViewHolder holder) {//Mau
-        if (holder.itemView != null) {
+    protected void setColors(int color, ViewHolder holder) {//Thiet lap mau sac
+        if (holder.itemView != null) { //Neu co du lieu se tao 1 card view
             CardView card=(CardView)holder.itemView;
-            card.setCardBackgroundColor(color);
+            card.setCardBackgroundColor(color); //Cai mau vao trong xml
             if (holder.title != null) {
                     holder.title.setTextColor(MaterialValueHelper.getPrimaryTextColor(activity, ColorUtil.isColorLight(color)));
             }
@@ -52,7 +52,7 @@ public class HorizontalAlbumAdapter extends AlbumAdapter { //Bo chuyen doi album
     @Override
     protected void loadAlbumCover(Album album, final ViewHolder holder) {
         if (holder.image == null) return;
-
+        //Kiem tra Glide xay dung  cac hoạt động để loading hình ảnh và màu sắc
         SongGlideRequest.Builder.from(Glide.with(activity), album.safeGetFirstSong())
                 .checkIgnoreMediaStore(activity)
                 .generatePalette(activity).build()
@@ -60,7 +60,7 @@ public class HorizontalAlbumAdapter extends AlbumAdapter { //Bo chuyen doi album
                     @Override
                     public void onLoadCleared(Drawable placeholder) {
                         super.onLoadCleared(placeholder);
-                        setColors(getAlbumArtistFooterColor(), holder);
+                        setColors(getAlbumArtistFooterColor(), holder);//lay mau cho album
                     }
 
                     @Override

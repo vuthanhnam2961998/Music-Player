@@ -41,7 +41,7 @@ public class ArtistAdapter extends AbsMultiSelectAdapter<ArtistAdapter.ViewHolde
     protected int itemLayoutRes;
 
     protected boolean usePalette = false;
-
+    //Tham chieu cac doi tuong
     public ArtistAdapter(@NonNull AppCompatActivity activity, List<Artist> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
         super(activity, cabHolder, R.menu.menu_media_selection);
         this.activity = activity;
@@ -81,7 +81,7 @@ public class ArtistAdapter extends AbsMultiSelectAdapter<ArtistAdapter.ViewHolde
         return new ViewHolder(view);
     }
 
-    @Override
+    @Override//Tra ve hinh anh
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Artist artist = dataSet.get(position);
 
@@ -166,14 +166,14 @@ public class ArtistAdapter extends AbsMultiSelectAdapter<ArtistAdapter.ViewHolde
     private List<Song> getSongList(@NonNull List<Artist> artists) {
         final List<Song> songs = new ArrayList<>();
         for (Artist artist : artists) {
-            songs.addAll(artist.getSongs()); // maybe async in future?
+            songs.addAll(artist.getSongs()); //Khong dong bo duoc
         }
         return songs;
     }
 
     @NonNull
     @Override
-    public String getSectionName(int position) {
+    public String getSectionName(int position) { //Sắp xếp dữ liệu theo thứ tự (theo tên)
         @Nullable String sectionName = null;
         switch (PreferenceUtil.getInstance(activity).getArtistSortOrder()) {
             case SortOrder.ArtistSortOrder.ARTIST_A_Z:
@@ -196,7 +196,7 @@ public class ArtistAdapter extends AbsMultiSelectAdapter<ArtistAdapter.ViewHolde
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(View v) {//Click chuột
             if (isInQuickSelectMode()) {
                 toggleChecked(getAdapterPosition());
             } else {

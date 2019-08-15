@@ -276,7 +276,7 @@
     <string name="what_do_you_want_to_share">Bạn muốn chia sẽ điều gì đó?</string>
     <string name="wiki">Wiki</string>
     <string name="wiki_unavailable">Không thể tìm thấy wiki</string>
-    <string name="write_an_email">Gửi email cho nhà phát triển</string>
+    <string name="write_an_email_feedback">Gửi phản hồi</string>
     <string name="x_has_been_set_as_ringtone">đặt \"%1$s\" làm nhạc chuông</string>
     <string name="x_selected">đã chọn %1$d </string>
     <string name="year">Year</string>

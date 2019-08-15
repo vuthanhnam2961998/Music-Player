@@ -33,7 +33,7 @@ import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder, Album> implements FastScrollRecyclerView.SectionedAdapter {
+public  class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder, Album> implements FastScrollRecyclerView.SectionedAdapter {
 
     protected final AppCompatActivity activity;
     protected List<Album> dataSet;
@@ -43,7 +43,7 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
     protected boolean usePalette = false;
 
     public AlbumAdapter(@NonNull AppCompatActivity activity, List<Album> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
-        super(activity, cabHolder, R.menu.menu_media_selection);
+        super(activity, cabHolder, R.menu.menu_media_selection); //Chuyen doi Adapter
         this.activity = activity;
         this.dataSet = dataSet;
         this.itemLayoutRes = itemLayoutRes;
@@ -52,44 +52,44 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
         setHasStableIds(true);
     }
 
-    public void usePalette(boolean usePalette) {
+    public void usePalette(boolean usePalette)//Bang mau
+    {
         this.usePalette = usePalette;
         notifyDataSetChanged();
     }
 
-    public void swapDataSet(List<Album> dataSet) {
+    public void swapDataSet(List<Album> dataSet) { //Chuyen doi Du Lieu
         this.dataSet = dataSet;
-        notifyDataSetChanged();
+        notifyDataSetChanged(); //Chi hoat dong them,xoa,sua,chen vao Adapter
     }
 
     public List<Album> getDataSet() {
         return dataSet;
-    }
+    } //Dua du lieu vao album
 
-    @Override
     @NonNull
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//Chuyen doi tu xml sang View java code
         View view = LayoutInflater.from(activity).inflate(itemLayoutRes, parent, false);
         return createViewHolder(view, viewType);
     }
 
     protected ViewHolder createViewHolder(View view, int viewType) {
         return new ViewHolder(view);
-    }
+    }//Tao view
 
     protected String getAlbumTitle(Album album) {
         return album.getTitle();
-    }
+    }//Lay ten Album
 
     protected String getAlbumText(Album album) {
-        return MusicUtil.buildInfoString(
+        return MusicUtil.buildInfoString(//Xay dung
             album.getArtistName(),
             MusicUtil.getSongCountString(activity, album.songs.size())
         );
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) { //Rang Buoc
         final Album album = dataSet.get(position);
 
         final boolean isChecked = isChecked(album);
@@ -97,14 +97,16 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
 
         if (holder.getAdapterPosition() == getItemCount() - 1) {
             if (holder.shortSeparator != null) {
-                holder.shortSeparator.setVisibility(View.GONE);
-            }
-        } else {
-            if (holder.shortSeparator != null) {
-                holder.shortSeparator.setVisibility(View.VISIBLE);
+                holder.shortSeparator.setVisibility(View.GONE);//An View hoan toan va thay the boi view khac
             }
         }
+        else {
+            if (holder.shortSeparator != null) {
+                holder.shortSeparator.setVisibility(View.VISIBLE);//Hien View bi an len tren man hinh
 
+            }
+        }
+//Sua doi
         if (holder.title != null) {
             holder.title.setText(getAlbumTitle(album));
         }
@@ -115,7 +117,7 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
         loadAlbumCover(album, holder);
     }
 
-    protected void setColors(int color, ViewHolder holder) {
+    protected void setColors(int color, ViewHolder holder) {//Mau sac
         if (holder.paletteColorContainer != null) {
             holder.paletteColorContainer.setBackgroundColor(color);
             if (holder.title != null) {
@@ -135,13 +137,13 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
                 .generatePalette(activity).build()
                 .into(new MusicColoredTarget(holder.image) {
                     @Override
-                    public void onLoadCleared(Drawable placeholder) {
+                    public void onLoadCleared(Drawable placeholder) {//Cai mau
                         super.onLoadCleared(placeholder);
                         setColors(getDefaultFooterColor(), holder);
                     }
 
                     @Override
-                    public void onColorReady(int color) {
+                    public void onColorReady(int color) {//Bat bang mau
                         if (usePalette)
                             setColors(color, holder);
                         else
@@ -153,22 +155,22 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
     @Override
     public int getItemCount() {
         return dataSet.size();
-    }
+    }//Them hinh
 
     @Override
     public long getItemId(int position) {
         return dataSet.get(position).getId();
-    }
+    }//Them Id
 
     @Override
     protected Album getIdentifier(int position) {
         return dataSet.get(position);
-    }
+    }//Ten album
 
     @Override
     protected String getName(Album album) {
         return album.getTitle();
-    }
+    }//Ten
 
     @Override
     protected void onMultipleItemAction(@NonNull MenuItem menuItem, @NonNull List<Album> selection) {
@@ -178,8 +180,8 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
     @NonNull
     private List<Song> getSongList(@NonNull List<Album> albums) {
         final List<Song> songs = new ArrayList<>();
-        for (Album album : albums) {
-            songs.addAll(album.songs);
+        for (Album album : albums) {  //Lay du lieu ra tu album
+            songs.addAll(album.songs); //Ađ
         }
         return songs;
     }
@@ -228,7 +230,7 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
 
         @Override
         public boolean onLongClick(View view) {
-            toggleChecked(getAdapterPosition());
+            toggleChecked(getAdapterPosition()); //Kiem tra toggle co mo hay chua
             return true;
         }
     }

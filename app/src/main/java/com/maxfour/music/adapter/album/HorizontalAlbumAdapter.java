@@ -22,21 +22,21 @@ import com.maxfour.music.util.MusicUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HorizontalAlbumAdapter extends AlbumAdapter {
+public class HorizontalAlbumAdapter extends AlbumAdapter { //Bo chuyen doi album nam ngang
 
     public HorizontalAlbumAdapter(@NonNull AppCompatActivity activity, List<Album> dataSet, boolean usePalette, @Nullable CabHolder cabHolder) {
-        super(activity, dataSet, HorizontalAdapterHelper.LAYOUT_RES, usePalette, cabHolder);
+        super(activity, dataSet, HorizontalAdapterHelper.LAYOUT_RES, usePalette, cabHolder);//Tham Chieu toi cac doi tuong
     }
 
     @Override
-    protected ViewHolder createViewHolder(View view, int viewType) {
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+    protected ViewHolder createViewHolder(View view, int viewType) {//Tao View moi
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();//Bo tri bo cuc
         HorizontalAdapterHelper.applyMarginToLayoutParams(activity, params, viewType);
         return new ViewHolder(view);
     }
 
     @Override
-    protected void setColors(int color, ViewHolder holder) {
+    protected void setColors(int color, ViewHolder holder) {//Mau
         if (holder.itemView != null) {
             CardView card=(CardView)holder.itemView;
             card.setCardBackgroundColor(color);

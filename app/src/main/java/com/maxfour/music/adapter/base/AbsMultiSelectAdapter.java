@@ -14,7 +14,7 @@ import com.maxfour.music.interfaces.CabHolder;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Cơ chê chuyển đổi
 public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, I> extends RecyclerView.Adapter<VH> implements MaterialCab.Callback {
     @Nullable
     private final CabHolder cabHolder;
@@ -30,11 +30,11 @@ public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, 
         this.context = context;
     }
 
-    protected void setMultiSelectMenuRes(@MenuRes int menuRes) {
+    protected void setMultiSelectMenuRes(@MenuRes int menuRes) { //cơ chế đáp ứng
         this.menuRes = menuRes;
     }
 
-    protected boolean toggleChecked(final int position) {
+    protected boolean toggleChecked(final int position) {//Kiem tra các lần thây đổi và cập nhật lại nếu có quá trình thay đổi xảy ra
         if (cabHolder != null) {
             I identifier = getIdentifier(position);
             if (identifier == null) return false;
@@ -62,9 +62,9 @@ public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, 
         }
     }
 
-    private void updateCab() {
+    private void updateCab() {//Kiem tra cập nhật của thanh hành động
         if (cabHolder != null) {
-            if (cab == null || !cab.isActive()) {
+            if (cab == null || !cab.isActive()) {//Mở ngữ cảnh menu và chọn bao nhiêu yêu cầu
                 cab = cabHolder.openCab(menuRes, this);
             }
             final int size = checked.size();
@@ -83,12 +83,12 @@ public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, 
         return checked.contains(identifier);
     }
 
-    protected boolean isInQuickSelectMode() {
+    protected boolean isInQuickSelectMode() { //Kiem tra nhanh chế độ
         return cab != null && cab.isActive();
     }
 
     @Override
-    public boolean onCabCreated(MaterialCab materialCab, Menu menu) {
+    public boolean onCabCreated(MaterialCab materialCab, Menu menu) {//Tạo
         return true;
     }
 

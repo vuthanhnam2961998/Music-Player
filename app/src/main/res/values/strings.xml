@@ -189,7 +189,6 @@
     <string name="pref_header_now_playing_screen">Now playing</string>
     <string name="pref_header_playlists">Playlists</string>
     <string name="pref_summary_album_art_on_lockscreen">Uses the current songs album cover as lockscreen wallpaper</string>
-    <string name="pref_summary_audio_ducking">Notifications, navigation etc.</string>
     <string name="pref_summary_blurred_album_art">Blurs the album cover on the lockscreen. Can cause problems with third party apps and widgets.</string>
     <string name="pref_summary_classic_notification">Use the classic notification design</string>
     <string name="pref_summary_colored_app_shortcuts">Colors the app shortcuts in the primary color</string>
@@ -203,7 +202,7 @@
     <string name="pref_summary_synchronized_lyrics_show">Currently only synchronized lyrics in LRC format are supported. Either embedded or as a separate file.</string>
     <string name="pref_title_album_art_on_lockscreen">Show album cover</string>
     <string name="pref_title_app_shortcuts">Colored app shortcuts</string>
-    <string name="pref_title_audio_ducking">Reduce volume on focus loss</string>
+
     <string name="pref_title_auto_download_metadata">Auto download metadata</string>
     <string name="pref_title_blurred_album_art">Blur album cover</string>
     <string name="pref_title_classic_notification">Classic notification design</string>

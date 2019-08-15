@@ -190,7 +190,6 @@
     <string name="pref_header_now_playing_screen">Hiện đang phát</string>
     <string name="pref_header_playlists">Danh sách phát</string>
     <string name="pref_summary_album_art_on_lockscreen">Sử dụng bìa album bài hát hiện tại làm hình nền màn hình khóa</string>
-    <string name="pref_summary_audio_ducking">Thông báo, điều hướng,...</string>
     <string name="pref_summary_blurred_album_art">Làm mờ bìa album trên màn hình khóa. Có thể gây ra vấn đề với các ứng dụng và widget của bên thứ ba.</string>
     <string name="pref_summary_classic_notification">Sử dụng thông báo kiểu cổ điển</string>
     <string name="pref_summary_colored_app_shortcuts">Tô màu các phím tắt ứng dụng trong màu chính</string>
@@ -202,7 +201,7 @@
     <string name = "pref_summary_remember_shuffle"> Chế độ phát ngẫu nhiên sẽ duy trì khi chọn danh sách bài hát mới </string>
     <string name="pref_summary_synchronized_lyrics_show"> Hiện tại chỉ hỗ trợ lời bài hát được đồng bộ hóa ở định dạng LRC. Được nhúng hoặc dưới dạng một tệp riêng biệt. </string>
     <string name = "pref_title_album_art_on_lockscreen"> Hiển thị bìa album </string>
-    <string name="pref_title_app_shortcuts"> Phím tắt ứng dụng màu </string>
+    <string name="pref_title_app_shortcuts">Phím tắt sử dụng màu ứng dụng</string>
     <string name = "pref_title_audio_ducking"> Giảm âm lượng khi mất tiêu điểm </string>
     <string name="pref_title_auto_download_metadata"> Tự động tải xuống dữ liệu lớn</string>
     <string name="pref_title_blurred_album_art"> Bìa album mờ </string>
@@ -251,7 +250,7 @@
     <string name="some_files_are_not_listed_in_the_media_store">Một số tập tin không thể đọc từ media store</string>
     <string name="song">Bài hát</string>
     <string name="song_hint">Bài nhạc (2 for song 2 or 3004 for CD3 song 4)</string>
-    <string name="song_tag_editor">Bài hát</string>
+    <string name="song_tag_editor">Tên bài hát</string>
     <string name="songs">Bài hát</string>
     <plurals name="songs_x">
         <item quantity="other">Bài hát</item>

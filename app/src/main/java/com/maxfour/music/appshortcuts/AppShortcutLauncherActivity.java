@@ -13,24 +13,23 @@ import com.maxfour.music.model.smartplaylist.MyTopSongsPlaylist;
 import com.maxfour.music.model.smartplaylist.ShuffleAllPlaylist;
 import com.maxfour.music.service.MusicService;
 
-public class AppShortcutLauncherActivity extends Activity {
+public class AppShortcutLauncherActivity extends Activity {//Khởi chạy lối tắt
     public static final String KEY_SHORTCUT_TYPE = "com.maxfour.music.appshortcuts.ShortcutType";
 
-    public static final int SHORTCUT_TYPE_SHUFFLE_ALL = 0;
-    public static final int SHORTCUT_TYPE_TOP_SONGS = 1;
-    public static final int SHORTCUT_TYPE_LAST_ADDED = 2;
-    public static final int SHORTCUT_TYPE_NONE = 3;
+    public static final int SHORTCUT_TYPE_SHUFFLE_ALL = 0;//All
+    public static final int SHORTCUT_TYPE_TOP_SONGS = 1;//Nhạc
+    public static final int SHORTCUT_TYPE_LAST_ADDED = 2;//Thêm cuối cùng
+    public static final int SHORTCUT_TYPE_NONE = 3; //Loại
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {//Tạo
         super.onCreate(savedInstanceState);
 
         int shortcutType = SHORTCUT_TYPE_NONE;
 
-        // Set shortcutType from the intent extras
+        //Đặt phím tắt từ phần bổ sung ý định
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            //noinspection WrongConstant
             shortcutType = extras.getInt(KEY_SHORTCUT_TYPE, SHORTCUT_TYPE_NONE);
         }
 
@@ -59,7 +58,7 @@ public class AppShortcutLauncherActivity extends Activity {
         Intent intent = new Intent(this, MusicService.class);
         intent.setAction(MusicService.ACTION_PLAY_PLAYLIST);
 
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();//Bundle trong Android để truyền dữ liệu giữa các Intent
         bundle.putParcelable(MusicService.INTENT_EXTRA_PLAYLIST, playlist);
         bundle.putInt(MusicService.INTENT_EXTRA_SHUFFLE_MODE, shuffleMode);
 

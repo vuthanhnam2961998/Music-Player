@@ -19,7 +19,7 @@ import com.maxfour.music.util.SwipeAndDragHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Thông tin danh mục
 public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapter.ViewHolder> implements SwipeAndDragHelper.ActionCompletionContract {
     private List<CategoryInfo> categoryInfos;
     private ItemTouchHelper touchHelper;
@@ -32,7 +32,7 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
 
     @Override
     @NonNull
-    public CategoryInfoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoryInfoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//Tạo ViewHolder giúp xem siêu dữ liệu và thành phần trong danh sách
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.preference_dialog_library_categories_listitem, parent, false);
         return new ViewHolder(view);
     }

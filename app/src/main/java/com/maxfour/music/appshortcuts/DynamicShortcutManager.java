@@ -16,14 +16,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
-public class DynamicShortcutManager {
+public class DynamicShortcutManager {//Quản lí phím tắt
 
     private Context context;
     private ShortcutManager shortcutManager;
 
     public DynamicShortcutManager(Context context) {
         this.context = context;
-        shortcutManager = this.context.getSystemService(ShortcutManager.class);
+        shortcutManager = this.context.getSystemService(ShortcutManager.class);//Trả lại tay cầm cho một dịch vụ cấp hệ thống theo lớp.
+
     }
 
     public static ShortcutInfo createShortcut(Context context, String id, String shortLabel, String longLabel, Icon icon, Intent intent) {
@@ -35,7 +36,7 @@ public class DynamicShortcutManager {
                 .build();
     }
 
-    public void initDynamicShortcuts() {
+    public void initDynamicShortcuts() {//khởi tạo
         if (shortcutManager.getDynamicShortcuts().size() == 0) {
             shortcutManager.setDynamicShortcuts(getDefaultShortcuts());
         }
@@ -43,9 +44,9 @@ public class DynamicShortcutManager {
 
     public void updateDynamicShortcuts() {
         shortcutManager.updateShortcuts(getDefaultShortcuts());
-    }
+    }//Cập nhật
 
-    public List<ShortcutInfo> getDefaultShortcuts() {
+    public List<ShortcutInfo> getDefaultShortcuts() {//Phim tắt mặc định
         return (Arrays.asList(
                 new ShuffleAllShortcutType(context).getShortcutInfo(),
                 new TopSongsShortcutType(context).getShortcutInfo(),

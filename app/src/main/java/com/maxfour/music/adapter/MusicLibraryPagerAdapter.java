@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
+//Thư viện âm nhạc
 public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
 
     private final SparseArray<WeakReference<Fragment>> mFragmentArray = new SparseArray<>();
@@ -36,7 +36,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
     public MusicLibraryPagerAdapter(@NonNull final Context context, final FragmentManager fragmentManager) {
         super(fragmentManager);
         mContext = context;
-        setCategoryInfos(PreferenceUtil.getInstance(context).getLibraryCategoryInfos());
+        setCategoryInfos(PreferenceUtil.getInstance(context).getLibraryCategoryInfos());//Cài đặt
     }
 
     public void setCategoryInfos(@NonNull List<CategoryInfo> categoryInfos) {
@@ -92,7 +92,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
             mWeakFragment.clear();
         }
         mFragmentArray.put(position, new WeakReference<>(mFragment));
-        return mFragment;
+        return mFragment; // trả về phân đoạn
     }
 
     @Override
@@ -103,7 +103,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public void destroyItem(final ViewGroup container, final int position, final Object object) {
+    public void destroyItem(final ViewGroup container, final int position, final Object object) {//Hủy
         super.destroyItem(container, position, object);
         final WeakReference<Fragment> mWeakFragment = mFragmentArray.get(position);
         if (mWeakFragment != null) {
@@ -123,15 +123,16 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
     }
 
     /**
-     * Aligns the fragment cache with the current category layout.
+     * phân đoạn với điều chỉnh bố cục hiện tại
      */
-    private void alignCache() {
+    private void alignCache() {//Căn chỉnh cache
         if (mFragmentArray.size() == 0) return;
 
         HashMap<String, WeakReference<Fragment>> mappings = new HashMap<>(mFragmentArray.size());
 
         for (int i = 0, size = mFragmentArray.size(); i < size; i++) {
-            WeakReference<Fragment> ref = mFragmentArray.valueAt(i);
+            WeakReference<Fragment> ref = mFragmentArray.valueAt(i);//trong phạm vi của i
+            // trả về chỉ mục mà SparseArray lưu giữ
             Fragment fragment = ref.get();
             if (fragment != null) {
                 mappings.put(fragment.getClass().getName(), ref);
@@ -140,9 +141,9 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
         for (int i = 0, size = mHolderList.size(); i < size; i++) {
             WeakReference<Fragment> ref = mappings.get(mHolderList.get(i).mClassName);
             if (ref != null) {
-                mFragmentArray.put(i, ref);
+                mFragmentArray.put(i, ref);//Thêm
             } else {
-                mFragmentArray.remove(i);
+                mFragmentArray.remove(i);//Xóa
             }
         }
     }

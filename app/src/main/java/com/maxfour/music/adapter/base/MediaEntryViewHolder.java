@@ -13,9 +13,12 @@ import com.maxfour.music.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//ViewHolder mô tả chế độ xem mục và siêu dữ liệu về vị trí của nó trong RecyclerView.
+//View.OnClickLister bật chế độ gọi lại được gọi khi nhấp
+//View.OnLongClickListener bật chế độ gọi lại được gọi khi nhấp và giữ
 public class MediaEntryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-    @Nullable
+    @Nullable //Nó làm rõ rằng phương thức chấp nhận các giá trị null và nếu bạn ghi đè phương thức.
+    // Bạn cũng nên chấp nhận các giá trị null.
     @BindView(R.id.image)
     public ImageView image;
 
@@ -53,13 +56,15 @@ public class MediaEntryViewHolder extends RecyclerView.ViewHolder implements Vie
 
     public MediaEntryViewHolder(View itemView) {
         super(itemView);
+        //Không chỉ hỗ trợ cho Activity và Fragment mà Butter Knife còn hỗ trợ đối với cả
+        // ViewHolder bằng việc sử dụng câu lệnh bind() trong hàm khởi tạo của ViewHolder
         ButterKnife.bind(this, itemView);
 
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
     }
 
-    protected void setImageTransitionName(@NonNull String transitionName) {
+    protected void setImageTransitionName(@NonNull String transitionName) {//Chuyển đổi tên hình ảnh
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && image != null) {
             image.setTransitionName(transitionName);
         }

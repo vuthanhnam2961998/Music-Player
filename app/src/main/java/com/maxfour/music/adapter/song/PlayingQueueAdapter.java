@@ -20,7 +20,7 @@ import com.maxfour.music.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Hàng chờ
 public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAdapter<PlayingQueueAdapter.ViewHolder> {
 
     private static final int HISTORY = 0;
@@ -43,7 +43,7 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
     public void onBindViewHolder(@NonNull SongAdapter.ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
         if (holder.imageText != null) {
-            holder.imageText.setText(String.valueOf(position - current));
+            holder.imageText.setText(String.valueOf(position - current)); //Thay đổi biến đầu vào theo (postion -current)
         }
         if (holder.getItemViewType() == HISTORY || holder.getItemViewType() == CURRENT) {
             setAlpha(holder, 0.5f);
@@ -62,7 +62,6 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
 
     @Override
     protected void loadAlbumCover(Song song, SongAdapter.ViewHolder holder) {
-        // We don't want to load it in this adapter
     }
 
     public void swapDataSet(List<Song> dataSet, int position) {
@@ -71,7 +70,7 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
         notifyDataSetChanged();
     }
 
-    public void setCurrent(int current) {
+    public void setCurrent(int current) {//Thay đổi hiện tại
         this.current = current;
         notifyDataSetChanged();
     }
@@ -95,12 +94,12 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
     }
 
     @Override
-    public boolean onCheckCanStartDrag(ViewHolder holder, int position, int x, int y) {
+    public boolean onCheckCanStartDrag(ViewHolder holder, int position, int x, int y) {//kiểm tra có thể kéo được không
         return ViewUtil.hitTest(holder.imageText, x, y);
     }
 
     @Override
-    public ItemDraggableRange onGetItemDraggableRange(ViewHolder holder, int position) {
+    public ItemDraggableRange onGetItemDraggableRange(ViewHolder holder, int position) {//Phạm vi hoạt động mà kéo được
         return null;
     }
 
@@ -112,15 +111,15 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
     @Override
     public boolean onCheckCanDrop(int draggingPosition, int dropPosition) {
         return true;
-    }
+    }//Kiểm tra có thể thả
 
     @Override
     public void onItemDragStarted(int position) {
         notifyDataSetChanged();
-    }
+    }//Bắt đầu kéo di chuyển
 
     @Override
-    public void onItemDragFinished(int fromPosition, int toPosition, boolean result) {
+    public void onItemDragFinished(int fromPosition, int toPosition, boolean result) {//Đặt vào vị trí thích hợp
         notifyDataSetChanged();
     }
 

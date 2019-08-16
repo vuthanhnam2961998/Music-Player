@@ -16,7 +16,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Chuyển đổi bài hát
 public class ShuffleButtonSongAdapter extends AbsOffsetSongAdapter {
 
     public ShuffleButtonSongAdapter(AppCompatActivity activity, List<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
@@ -44,7 +44,7 @@ public class ShuffleButtonSongAdapter extends AbsOffsetSongAdapter {
                 holder.menu.setVisibility(View.GONE);
             }
             if (holder.image != null) {
-                final int padding = activity.getResources().getDimensionPixelSize(R.dimen.default_item_margin) / 2;
+                final int padding = activity.getResources().getDimensionPixelSize(R.dimen.default_item_margin) / 2;//Chinh cấu hình pixel cho từng khung hình
                 holder.image.setPadding(padding, padding, padding, padding);
                 holder.image.setColorFilter(accentColor);
                 holder.image.setImageResource(R.drawable.ic_shuffle_white_24dp);

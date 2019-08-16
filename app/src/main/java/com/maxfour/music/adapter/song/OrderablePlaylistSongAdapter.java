@@ -42,7 +42,7 @@ public class OrderablePlaylistSongAdapter extends PlaylistSongAdapter implements
     public long getItemId(int position) {
         position--;
         if (position < 0) return -2;
-        return ((List<PlaylistSong>) (List) dataSet).get(position).idInPlayList; // important!
+        return ((List<PlaylistSong>) (List) dataSet).get(position).idInPlayList; // Quan trọng trả về danh sách dữ liệu đang chạy
     }
 
     @Override

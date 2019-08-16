@@ -18,7 +18,7 @@ import com.maxfour.music.util.NavigationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Chạy danh sách bài hát
 public class PlaylistSongAdapter extends AbsOffsetSongAdapter {
 
     public PlaylistSongAdapter(AppCompatActivity activity, @NonNull List<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
@@ -27,12 +27,12 @@ public class PlaylistSongAdapter extends AbsOffsetSongAdapter {
     }
 
     @Override
-    protected SongAdapter.ViewHolder createViewHolder(View view) {
+    protected SongAdapter.ViewHolder createViewHolder(View view) {//Tạo ViewHolder
         return new PlaylistSongAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final SongAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final SongAdapter.ViewHolder holder, int position) {//ON
         if (holder.getItemViewType() == OFFSET_ITEM) {
             int textColor = ThemeStore.textColorSecondary(activity);
             if (holder.title != null) {

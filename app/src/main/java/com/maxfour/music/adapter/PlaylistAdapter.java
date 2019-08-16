@@ -39,7 +39,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+//Danh sách
 public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewHolder, Playlist> {
 
     private static final int SMART_PLAYLIST = 0;
@@ -137,7 +137,7 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
     @Override
     protected void onMultipleItemAction(@NonNull MenuItem menuItem, @NonNull List<Playlist> selection) {
         switch (menuItem.getItemId()) {
-            case R.id.action_delete_playlist:
+            case R.id.action_delete_playlist://Xóa
                 for (int i = 0; i < selection.size(); i++) {
                     Playlist playlist = selection.get(i);
                     if (playlist instanceof AbsSmartPlaylist) {
@@ -151,7 +151,7 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
                     DeletePlaylistDialog.create(selection).show(activity.getSupportFragmentManager(), "DELETE_PLAYLIST");
                 }
                 break;
-            case R.id.action_save_playlist:
+            case R.id.action_save_playlist://Lưu
                 if (selection.size() == 1) {
                     PlaylistMenuHelper.handleMenuClick(activity, selection.get(0), menuItem);
                 } else {
@@ -192,7 +192,7 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
         }
 
         @Override
-        protected void onPostExecute(String string) {
+        protected void onPostExecute(String string) {//Thực thi
             super.onPostExecute(string);
             Context context = getContext();
             if (context != null) {

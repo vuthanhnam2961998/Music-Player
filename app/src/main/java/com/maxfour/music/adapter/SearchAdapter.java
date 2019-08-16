@@ -26,7 +26,7 @@ import com.maxfour.music.util.NavigationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Tìm kiếm
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private static final int HEADER = 0;

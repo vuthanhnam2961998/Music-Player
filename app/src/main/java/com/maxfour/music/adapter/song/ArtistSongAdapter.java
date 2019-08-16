@@ -111,7 +111,7 @@ public class ArtistSongAdapter extends ArrayAdapter<Song> implements MaterialCab
                 return super.onMenuItemClick(item);
             }
         });
-
+        //Kiem tra chuyen doi
         convertView.setActivated(isChecked(song));
         convertView.setOnClickListener(view -> {
             if (isInQuickSelectMode()) {
@@ -132,7 +132,7 @@ public class ArtistSongAdapter extends ArrayAdapter<Song> implements MaterialCab
         SongsMenuHelper.handleMenuClick(activity, selection, menuItem.getItemId());
     }
 
-    protected void toggleChecked(Song song) {
+    protected void toggleChecked(Song song) {//Kiem tra xem bật hay chưa ?
         if (cabHolder != null) {
             openCabIfNecessary();
 
@@ -146,7 +146,7 @@ public class ArtistSongAdapter extends ArrayAdapter<Song> implements MaterialCab
         }
     }
 
-    private void openCabIfNecessary() {
+    private void openCabIfNecessary() {//Kiếm tra truyền nếu cần thiết
         if (cabHolder != null) {
             if (cab == null || !cab.isActive()) {
                 cab = cabHolder.openCab(R.menu.menu_media_selection, this);
@@ -154,7 +154,7 @@ public class ArtistSongAdapter extends ArrayAdapter<Song> implements MaterialCab
         }
     }
 
-    private void unCheckAll() {
+    private void unCheckAll() {//Không kiếm tra tất cả
         checked.clear();
         notifyDataSetChanged();
     }

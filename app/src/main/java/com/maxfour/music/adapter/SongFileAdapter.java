@@ -28,7 +28,7 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-
+//File nhạc
 public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewHolder, File> implements FastScrollRecyclerView.SectionedAdapter {
 
     private static final int FILE = 0;
@@ -51,7 +51,7 @@ public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewH
 
     @Override
     public int getItemViewType(int position) {
-        return dataSet.get(position).isDirectory() ? FOLDER : FILE;
+        return dataSet.get(position).isDirectory() ? FOLDER : FILE;//Trả về thư mục hoặc một tập tin
     }
 
     @Override
@@ -71,7 +71,7 @@ public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int index) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int index) {//ON ViewHolder
         final File file = dataSet.get(index);
 
         holder.itemView.setActivated(isChecked(file));
@@ -104,14 +104,14 @@ public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewH
 
     protected String getFileTitle(File file) {
         return file.getName();
-    }
+    }//Tên file
 
-    protected String getFileText(File file) {
-        return file.isDirectory() ? null : readableFileSize(file.length());
+    protected String getFileText(File file) {//Text in file
+        return file.isDirectory() ? null : readableFileSize(file.length());//Trả về null hoặc đọc kích thước tập tin
     }
 
     @SuppressWarnings("ConstantConditions")
-    protected void loadFileImage(File file, final ViewHolder holder) {
+    protected void loadFileImage(File file, final ViewHolder holder) {//Tập tin hình ảnh
         final int iconColor = ATHUtil.resolveColor(activity, R.attr.iconColor);
         if (file.isDirectory()) {
             holder.image.setColorFilter(iconColor, PorterDuff.Mode.SRC_IN);
@@ -129,7 +129,7 @@ public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewH
         }
     }
 
-    public static String readableFileSize(long size) {
+    public static String readableFileSize(long size) {//Kích thước lưu bao nhiêu ?
         if (size <= 0) return size + " B";
         final String[] units = new String[]{"B", "KB", "MB", "GB", "TB"};
         int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
@@ -203,7 +203,7 @@ public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewH
     }
 
     public interface Callbacks {
-        void onFileSelected(File file);
+        void onFileSelected(File file);//Chọn File
 
         void onFileMenuClicked(File file, View view);
 

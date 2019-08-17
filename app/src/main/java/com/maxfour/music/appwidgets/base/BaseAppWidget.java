@@ -22,7 +22,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.util.MusicUtil;
-
+//appwidget là tiện ích xem các ứng dụng thu nhỏ trên màn hình chính và nhận các bản cập nhật định kì
 public abstract class BaseAppWidget extends AppWidgetProvider {
     public static final String NAME = "app_widget";
 

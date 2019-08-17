@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
-public abstract class BaseShortcutType {
+public abstract class BaseShortcutType {//Phim tắt cơ sở
 
     static final String ID_PREFIX = "com.maxfour.music.appshortcuts.id.";
 
@@ -27,9 +27,11 @@ public abstract class BaseShortcutType {
     abstract ShortcutInfo getShortcutInfo();
 
     /**
-     * Creates an Intent that will launch MainActivtiy and immediately play {@param songs} in either shuffle or normal mode
      *
-     * @param shortcutType Describes the type of shortcut to create (ShuffleAll, TopSongs, custom playlist, etc.)
+     Tạo một ý định sẽ khởi chạy MainActivtiy và ngay lập tức phát
+     {@param songs} ở chế độ phát ngẫu nhiên hoặc bình thường
+     *
+     * @param shortcutType mô tả phím tắt
      * @return
      */
     Intent getPlaySongsIntent(int shortcutType) {

@@ -9,18 +9,18 @@ import android.os.Build;
 
 import com.maxfour.music.service.MusicService;
 
-public class BootReceiver extends BroadcastReceiver {
+public class BootReceiver extends BroadcastReceiver {//Bộ thu khởi động
     @Override
     public void onReceive(final Context context, Intent intent) {
         final AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
 
-        // Start music service if there are any existing widgets
+        // Bắt đầu dịch vụ âm nhạc nếu có bất kỳ vật dụng hiện có nào
         if (widgetManager.getAppWidgetIds(new ComponentName(context, AppWidgetBig.class)).length > 0 ||
                 widgetManager.getAppWidgetIds(new ComponentName(context, AppWidgetClassic.class)).length > 0 ||
                 widgetManager.getAppWidgetIds(new ComponentName(context, AppWidgetSmall.class)).length > 0 ||
                 widgetManager.getAppWidgetIds(new ComponentName(context, AppWidgetCard.class)).length > 0) {
             final Intent serviceIntent = new Intent(context, MusicService.class);
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) { // not allowed on Oreo
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) { //không được phép trên Oreo
                 context.startService(serviceIntent);
             }
         }

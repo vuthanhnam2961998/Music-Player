@@ -10,7 +10,7 @@ import com.maxfour.music.appshortcuts.AppShortcutIconGenerator;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
-public final class TopSongsShortcutType extends BaseShortcutType {
+public final class TopSongsShortcutType extends BaseShortcutType {//Bài hát tìm kiếm hàng đầu trong đường đi ngắn nhất
     public TopSongsShortcutType(Context context) {
         super(context);
     }
@@ -19,7 +19,7 @@ public final class TopSongsShortcutType extends BaseShortcutType {
         return ID_PREFIX + "top_tracks";
     }
 
-    public ShortcutInfo getShortcutInfo() {
+    public ShortcutInfo getShortcutInfo() {// Trả về thông tin của shortcut
         return new ShortcutInfo.Builder(context, getId())
                 .setShortLabel(context.getString(R.string.app_shortcut_top_songs_short))
                 .setLongLabel(context.getString(R.string.my_top_songs))

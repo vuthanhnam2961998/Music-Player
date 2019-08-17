@@ -27,13 +27,13 @@ import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
 
-public class AppWidgetSmall extends BaseAppWidget {
+public class AppWidgetSmall extends BaseAppWidget { //Ứng dụng thu nhỏ
     public static final String NAME = "app_widget_small";
 
     private static AppWidgetSmall mInstance;
     private static int imageSize = 0;
     private static float cardRadius = 0f;
-    private Target<BitmapPaletteWrapper> target; // for cancellation
+    private Target<BitmapPaletteWrapper> target; //chức năng hủy bỏ
 
     public static synchronized AppWidgetSmall getInstance() {
         if (mInstance == null) {
@@ -43,10 +43,10 @@ public class AppWidgetSmall extends BaseAppWidget {
     }
 
     /**
-     * Initialize given widgets to default state, where we launch Music on
-     * default click and hide actions if service not running.
+     * Khởi tạo các widget đã cho thành trạng thái mặc định, nơi chúng tôi khởi chạy Music on
+     * nhấp chuột và ẩn hành động mặc định nếu dịch vụ không chạy.
      */
-    protected void defaultAppWidget(final Context context, final int[] appWidgetIds) {
+    protected void defaultAppWidget(final Context context, final int[] appWidgetIds) { //App widget mặc định
         final RemoteViews appWidgetView = new RemoteViews(context.getPackageName(), R.layout.app_widget_small);
 
         appWidgetView.setViewVisibility(R.id.media_titles, View.INVISIBLE);
@@ -60,7 +60,7 @@ public class AppWidgetSmall extends BaseAppWidget {
     }
 
     /**
-     * Update all active widget instances by pushing changes
+     * Cập nhật tất cả các trường hợp tiện ích hoạt động bằng cách đẩy các thay đổi
      */
     public void performUpdate(final MusicService service, final int[] appWidgetIds) {
         final RemoteViews appWidgetView = new RemoteViews(service.getPackageName(), R.layout.app_widget_small);
@@ -68,7 +68,7 @@ public class AppWidgetSmall extends BaseAppWidget {
         final boolean isPlaying = service.isPlaying();
         final Song song = service.getCurrentSong();
 
-        // Set the titles and artwork
+        // Đặt tiêu đề và tác phẩm nghệ thuật
         if (TextUtils.isEmpty(song.title) && TextUtils.isEmpty(song.artistName)) {
             appWidgetView.setViewVisibility(R.id.media_titles, View.INVISIBLE);
         } else {
@@ -83,7 +83,8 @@ public class AppWidgetSmall extends BaseAppWidget {
             appWidgetView.setTextViewText(R.id.text, song.artistName);
         }
 
-        // Link actions buttons to intents
+        //
+        //Liên kết các nút hành động với Intents
         linkButtons(service, appWidgetView);
 
         if (imageSize == 0)
@@ -91,7 +92,7 @@ public class AppWidgetSmall extends BaseAppWidget {
         if (cardRadius == 0f)
             cardRadius = service.getResources().getDimension(R.dimen.app_widget_card_radius);
 
-        // Load the album cover async and push the update on completion
+        //Tải bìa album không đồng bộ và đẩy cập nhật khi hoàn thành
         final Context appContext = service.getApplicationContext();
         service.runOnUiThread(new Runnable() {
             @Override
@@ -117,11 +118,11 @@ public class AppWidgetSmall extends BaseAppWidget {
                             }
 
                             private void update(@Nullable Bitmap bitmap, int color) {
-                                // Set correct drawable for pause state
+                                // Đặt drawable chính xác cho trạng thái tạm dừng
                                 int playPauseRes = isPlaying ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp;
                                 appWidgetView.setImageViewBitmap(R.id.button_toggle_play_pause, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, playPauseRes, color)));
 
-                                // Set prev/next button drawables
+                                //Đặt các nút rút trước / nút kế tiếp
                                 appWidgetView.setImageViewBitmap(R.id.button_next, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_next_white_24dp, color)));
                                 appWidgetView.setImageViewBitmap(R.id.button_prev, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_previous_white_24dp, color)));
 
@@ -137,7 +138,7 @@ public class AppWidgetSmall extends BaseAppWidget {
     }
 
     /**
-     * Link up various button actions using {@link PendingIntent}.
+     * Liên kết các hành động nút khác nhau bằng cách sử dụng {@link PendingIntent}.
      */
     private void linkButtons(final Context context, final RemoteViews views) {
         Intent action;

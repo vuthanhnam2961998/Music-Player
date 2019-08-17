@@ -15,20 +15,20 @@ import com.kabouzeid.appthemehelper.ThemeStore;
 import com.maxfour.music.R;
 import com.maxfour.music.util.ImageUtil;
 import com.maxfour.music.util.PreferenceUtil;
-
+//Trình tạo biểu tượng lối tắt ứng dụng
 @RequiresApi(Build.VERSION_CODES.N_MR1)
 public final class AppShortcutIconGenerator {
 
-    public static Icon generateThemedIcon(Context context, int iconId) {
-        if (PreferenceUtil.getInstance(context).coloredAppShortcuts()) {
-            return generateUserThemedIcon(context, iconId).toIcon();
+    public static Icon generateThemedIcon(Context context, int iconId) {//Tạo biểu tượng theo chủ đề
+        if (PreferenceUtil.getInstance(context).coloredAppShortcuts()) {//getInstance(context) trả về đối tượng chữ kí đã được chỉ định
+            return generateUserThemedIcon(context, iconId).toIcon();//Tạo biểu tượng người dùng
         } else {
-            return generateDefaultThemedIcon(context, iconId).toIcon();
+            return generateDefaultThemedIcon(context, iconId).toIcon();//Tạo biểu tượng mặc định
         }
     }
 
     private static IconCompat generateDefaultThemedIcon(Context context, int iconId) {
-        // Return an Icon of iconId with default colors
+        // Trả lại Biểu tượng của iconId với màu mặc định
         return generateThemedIcon(context, iconId,
                 context.getColor(R.color.app_shortcut_default_foreground),
                 context.getColor(R.color.app_shortcut_default_background)
@@ -36,11 +36,11 @@ public final class AppShortcutIconGenerator {
     }
 
     private static IconCompat generateUserThemedIcon(Context context, int iconId) {
-        // Get background color from context's theme
+        // Nhận màu nền từ chủ đề bối cảnh
         final TypedValue typedColorBackground = new TypedValue();
         context.getTheme().resolveAttribute(android.R.attr.colorBackground, typedColorBackground, true);
 
-        // Return an Icon of iconId with those colors
+        // Trả lại một Biểu tượng của iconId với các màu đó
         return generateThemedIcon(context, iconId,
                 ThemeStore.accentColor(context),
                 typedColorBackground.data
@@ -48,7 +48,7 @@ public final class AppShortcutIconGenerator {
     }
 
     private static IconCompat generateThemedIcon(Context context, int iconId, int foregroundColor, int backgroundColor) {
-        // Get and tint foreground and background drawables
+        // Nhận và tô màu cho các bản vẽ nền trước và nền
         Drawable vectorDrawable = ImageUtil.getTintedVectorDrawable(context, iconId, foregroundColor);
         Drawable backgroundDrawable = ImageUtil.getTintedVectorDrawable(context, R.drawable.ic_app_shortcut_background, backgroundColor);
 
@@ -56,10 +56,10 @@ public final class AppShortcutIconGenerator {
             AdaptiveIconDrawable adaptiveIconDrawable = new AdaptiveIconDrawable(backgroundDrawable, vectorDrawable);
             return IconCompat.createWithAdaptiveBitmap(ImageUtil.createBitmap(adaptiveIconDrawable));
         } else {
-            // Squash the two drawables together
+            // kết hợp cả 2 lại với nhau
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{backgroundDrawable, vectorDrawable});
 
-            // Return as an Icon
+            //Quay trở lại như một Icon
             return IconCompat.createWithBitmap(ImageUtil.createBitmap(layerDrawable));
         }
     }

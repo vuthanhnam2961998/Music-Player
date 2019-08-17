@@ -10,7 +10,7 @@ import com.maxfour.music.appshortcuts.AppShortcutIconGenerator;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
-public final class LastAddedShortcutType extends BaseShortcutType {
+public final class LastAddedShortcutType extends BaseShortcutType {//Thêm cuối
     public LastAddedShortcutType(Context context) {
         super(context);
     }

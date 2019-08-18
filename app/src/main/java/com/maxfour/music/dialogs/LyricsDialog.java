@@ -22,7 +22,7 @@ public class LyricsDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        //noinspection ConstantConditions
+        //không kiểm tra điều kiện liên tục
         return new MaterialDialog.Builder(getActivity())
                 .title(getArguments().getString("title"))
                 .content(getArguments().getString("lyrics"))

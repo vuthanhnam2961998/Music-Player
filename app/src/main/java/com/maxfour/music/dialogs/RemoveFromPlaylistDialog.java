@@ -40,7 +40,7 @@ public class RemoveFromPlaylistDialog extends DialogFragment {
         final List<PlaylistSong> songs = getArguments().getParcelableArrayList("songs");
         int title;
         CharSequence content;
-        if (songs.size() > 1) {
+        if (songs.size() > 1) {//Xóa bài hát(số nhiều)
             title = R.string.remove_songs_from_playlist_title;
             content = Html.fromHtml(getResources().getQuantityString(R.plurals.remove_x_songs_from_playlist, songs.size(), songs.size()));
         } else {

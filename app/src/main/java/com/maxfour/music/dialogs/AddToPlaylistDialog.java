@@ -48,7 +48,8 @@ public class AddToPlaylistDialog extends DialogFragment {
                 .items(playlistNames)
                 .itemsCallback((materialDialog, view, i, charSequence) -> {
                     //noinspection unchecked
-                    final ArrayList<Song> songs = getArguments().getParcelableArrayList("songs");
+                    final ArrayList<Song> songs = getArguments().getParcelableArrayList("songs");//Trả về giá trị được liên kết với khóa đã cho hoặc null nếu không tồn tại ánh xạ của loại mong muốn
+                    //đối với khóa đã cho hoặc giá trị null được liên kết rõ ràng với khóa.
                     if (songs == null) return;
                     if (i == 0) {
                         materialDialog.dismiss();

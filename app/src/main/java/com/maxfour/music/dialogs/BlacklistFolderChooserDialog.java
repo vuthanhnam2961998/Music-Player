@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
+//Hộp thoại chọn danh sách đen
 public class BlacklistFolderChooserDialog extends DialogFragment implements MaterialDialog.ListCallback {
 
     private File parentFolder;
@@ -48,7 +48,7 @@ public class BlacklistFolderChooserDialog extends DialogFragment implements Mate
         return results;
     }
 
-    private File[] listFiles() {
+    private File[] listFiles() {//danh sách thư mục
         File[] contents = parentFolder.listFiles();
         List<File> results = new ArrayList<>();
         if (contents != null) {

@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
+//Hộp thoại quét thư mục
 public class ScanMediaFolderChooserDialog extends DialogFragment implements MaterialDialog.ListCallback {
 
     String initialPath = PreferenceUtil.getInstance(getContext()).getStartDirectory().getAbsolutePath();
@@ -37,10 +37,10 @@ public class ScanMediaFolderChooserDialog extends DialogFragment implements Mate
     private File[] parentContents;
     private boolean canGoUp = false;
 
-    public static ScanMediaFolderChooserDialog create() {
+    public static ScanMediaFolderChooserDialog create() {//Tạo
         return new ScanMediaFolderChooserDialog();
     }
-
+//quét đường dẫn
     private static void scanPaths(@NonNull WeakReference<Activity> activityWeakReference, @NonNull Context applicationContext, @Nullable String[] toBeScanned) {
         Activity activity = activityWeakReference.get();
         if (toBeScanned == null || toBeScanned.length < 1) {
@@ -50,7 +50,7 @@ public class ScanMediaFolderChooserDialog extends DialogFragment implements Mate
         }
     }
 
-    private String[] getContentsArray() {
+    private String[] getContentsArray() {//Mảng nội dung
         if (parentContents == null) {
             if (canGoUp) {
                 return new String[]{".."};
@@ -67,7 +67,7 @@ public class ScanMediaFolderChooserDialog extends DialogFragment implements Mate
         return results;
     }
 
-    private File[] listFiles() {
+    private File[] listFiles() {//Danh sách thư mục
         File[] contents = parentFolder.listFiles();
         List<File> results = new ArrayList<>();
         if (contents != null) {
@@ -76,8 +76,8 @@ public class ScanMediaFolderChooserDialog extends DialogFragment implements Mate
                     results.add(fi);
                 }
             }
-            Collections.sort(results, new FolderSorter());
-            return results.toArray(new File[results.size()]);
+            Collections.sort(results, new FolderSorter()); //Sắp xếp các phần từ trong mảng
+            return results.toArray(new File[results.size()]);//trả về kích thước của mảng
         }
         return null;
     }
@@ -86,7 +86,7 @@ public class ScanMediaFolderChooserDialog extends DialogFragment implements Mate
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                && ActivityCompat.checkSelfPermission(
+                && ActivityCompat.checkSelfPermission(//checkSelfPermission yêu cầu các quyền còn thiếu để sử lí người dùng cấp phép
                 getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             return new MaterialDialog.Builder(getActivity())

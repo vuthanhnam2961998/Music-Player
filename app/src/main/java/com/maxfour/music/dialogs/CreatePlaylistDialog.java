@@ -16,7 +16,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Tạo danh sách
 public class CreatePlaylistDialog extends DialogFragment {
 
     private static final String SONGS = "songs";
@@ -62,7 +62,7 @@ public class CreatePlaylistDialog extends DialogFragment {
                             final int playlistId = PlaylistsUtil.createPlaylist(getActivity(), name);
                             if (getActivity() != null) {
                                 //noinspection unchecked
-                                List<Song> songs = getArguments().getParcelableArrayList(SONGS);
+                                List<Song> songs = getArguments().getParcelableArrayList(SONGS);//Trả về giá trị được liên kết với khóa đã cho hoặc null nếu không tồn tại
                                 if (songs != null && !songs.isEmpty()) {
                                     PlaylistsUtil.addToPlaylist(getActivity(), songs, playlistId, true);
                                 }

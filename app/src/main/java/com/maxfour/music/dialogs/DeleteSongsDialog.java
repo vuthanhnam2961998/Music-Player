@@ -14,7 +14,7 @@ import com.maxfour.music.util.MusicUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Tắt hộp thoại bài hát
 public class DeleteSongsDialog extends DialogFragment {
 
     @NonNull

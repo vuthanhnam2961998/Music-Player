@@ -15,6 +15,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+//Xóa Playlist
 public class DeletePlaylistDialog extends DialogFragment {
 
     @NonNull
@@ -41,7 +42,7 @@ public class DeletePlaylistDialog extends DialogFragment {
         int title;
         CharSequence content;
         //noinspection ConstantConditions
-        if (playlists.size() > 1) {
+        if (playlists.size() > 1) {//Xoá tiêu đề nhiều danh sách
             title = R.string.delete_playlists_dialog_title;
             content = Html.fromHtml(getResources().getQuantityString(R.plurals.delete_x_playlists, playlists.size(), playlists.size()));
         } else {

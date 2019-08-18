@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
-
+/*Trình trợ giúp cập nhật tiến trình âm nhạc*/
 public class MusicProgressViewUpdateHelper extends Handler {
     private static final int CMD_REFRESH_PROGRESS_VIEWS = 1;
 
@@ -16,7 +16,7 @@ public class MusicProgressViewUpdateHelper extends Handler {
     private int intervalPlaying;
     private int intervalPaused;
 
-    public void start() {
+    public void start() {//hàng chờ
         queueNextRefresh(1);
     }
 
@@ -37,8 +37,8 @@ public class MusicProgressViewUpdateHelper extends Handler {
     }
 
     @Override
-    public void handleMessage(@NonNull Message msg) {
-        super.handleMessage(msg);
+    public void handleMessage(@NonNull Message msg) {//xử lí
+        super.handleMessage(msg);//Các lớp con phải thực hiện điều này để nhận tin nhắn
         if (msg.what == CMD_REFRESH_PROGRESS_VIEWS) {
             queueNextRefresh(refreshProgressViews());
         }
@@ -48,10 +48,10 @@ public class MusicProgressViewUpdateHelper extends Handler {
         final int progressMillis = MusicPlayerRemote.getSongProgressMillis();
         final int totalMillis = MusicPlayerRemote.getSongDurationMillis();
 
-        callback.onUpdateProgressViews(progressMillis, totalMillis);
+        callback.onUpdateProgressViews(progressMillis, totalMillis); //cập nhật lại
 
         if (!MusicPlayerRemote.isPlaying()) {
-            return intervalPaused;
+            return intervalPaused; //dừng
         }
 
         final int remainingMillis = intervalPlaying - progressMillis % intervalPlaying;

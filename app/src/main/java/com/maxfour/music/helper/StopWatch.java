@@ -5,28 +5,25 @@ import java.util.Locale;
 /**
  * Simple thread safe stop watch.
  */
-public class StopWatch {
+public class StopWatch {//Đồng hồ bấm giờ
 
     /**
-     * The time the stop watch was last started.
+     *Thời gian đồng hồ bấm giờ đã bắt đầu.
      */
     private long startTime;
 
     /**
-     * The time elapsed before the current {@link #startTime}.
+     *Thời gian trôi qua trước hiện tại {@link #startTime}.
      */
     private long previousElapsedTime;
 
     /**
-     * Whether the stop watch is currently running or not.
+     * Cho dù đồng hồ bấm giờ hiện đang chạy hay không.
      */
     private boolean isRunning;
 
     /**
-     * Starts or continues the stop watch.
-     *
-     * @see #pause()
-     * @see #reset()
+     * Bắt đầu hoặc tiếp tục đồng hồ bấm giờ.
      */
     public void start() {
         synchronized (this) {
@@ -36,10 +33,7 @@ public class StopWatch {
     }
 
     /**
-     * Pauses the stop watch. It can be continued later from {@link #start()}.
-     *
-     * @see #start()
-     * @see #reset()
+     * Tạm dừng đồng hồ bấm giờ. Nó có thể được tiếp tục sau {@link #start()}.
      */
     public void pause() {
         synchronized (this) {
@@ -50,9 +44,6 @@ public class StopWatch {
 
     /**
      * Stops and resets the stop watch to zero milliseconds.
-     *
-     * @see #start()
-     * @see #pause()
      */
     public void reset() {
         synchronized (this) {

@@ -5,7 +5,7 @@ import java.util.List;
 public class ArtistImage {
     public final String artistName;
 
-    // filePath to get the image of the artist
+    // filePath để có được hình ảnh của nghệ sĩ
     public final List<AlbumCover> albumCovers;
 
     public ArtistImage(String artistName, final List<AlbumCover> albumCovers) {

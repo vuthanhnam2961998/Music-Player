@@ -19,7 +19,7 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.maxfour.music.glide.audiocover.AudioFileCoverUtils;
 import com.maxfour.music.util.ImageUtil;
-
+//Trình tải hình nhạc sĩ
 public class ArtistImageFetcher implements DataFetcher<InputStream> {
 
     private final ArtistImage model;
@@ -120,7 +120,7 @@ public class ArtistImageFetcher implements DataFetcher<InputStream> {
                 result = new ByteArrayInputStream(bos.toByteArray());
 
             } else if (nbImages > 0) {
-                // we return the last cover album of the artist
+                //chúng tôi trả lại album bìa cuối cùng của nghệ sĩ
                 Map.Entry<InputStream, Integer> maxEntryYear = null;
 
                 for (final Map.Entry<InputStream, Integer> entry : images.entrySet()) {
@@ -155,12 +155,11 @@ public class ArtistImageFetcher implements DataFetcher<InputStream> {
 
     @Override
     public void cleanup() {
-        // already cleaned up in loadData and ByteArrayInputStream will be GC'd
+        // đã được dọn sạch trong loadData và ByteArrayInputStream sẽ là GC'd
         if (stream != null) {
             try {
                 stream.close();
             } catch (IOException ignore) {
-                // can't do much about it
             }
         }
     }

@@ -12,14 +12,14 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.mp3.MP3File;
 import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.images.Artwork;
-
+//Sử dụng tập tin âm thanh
 public class AudioFileCoverUtils {
 
     public static final String[] FALLBACKS = {"cover.jpg", "album.jpg", "folder.jpg", "cover.png", "album.png", "folder.png"};
 
 
     public static InputStream fallback(String path) throws FileNotFoundException {
-        // Method 1: use embedded high resolution album art if there is any
+        // Phương pháp 1: sử dụng nghệ thuật album có độ phân giải cao được nhúng nếu có
         try {
             MP3File mp3File = new MP3File(path);
             if (mp3File.hasID3v2Tag()) {
@@ -29,14 +29,14 @@ public class AudioFileCoverUtils {
                     return new ByteArrayInputStream(imageData);
                 }
             }
-            // If there are any exceptions, we ignore them and continue to the other fallback method
+            // Nếu có bất kỳ trường hợp ngoại lệ nào, bỏ qua chúng và tiếp tục phương thức dự phòng khác
         } catch (ReadOnlyFileException ignored) {
         } catch (InvalidAudioFrameException ignored) {
         } catch (TagException ignored) {
         } catch (IOException ignored) {
         }
 
-        // Method 2: look for album art in external files
+        // Cách 2: tìm album art trong các tệp bên ngoài
         final File parent = new File(path).getParentFile();
         for (String fallback : FALLBACKS) {
             File cover = new File(parent, fallback);

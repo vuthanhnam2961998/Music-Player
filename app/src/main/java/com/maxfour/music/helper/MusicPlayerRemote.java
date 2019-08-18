@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.WeakHashMap;
-
+//Trình phát nhạc từ xa
 public class MusicPlayerRemote {
 
     public static final String TAG = MusicPlayerRemote.class.getSimpleName();
@@ -42,7 +42,7 @@ public class MusicPlayerRemote {
     public static MusicService musicService;
 
     private static final WeakHashMap<Context, ServiceBinder> mConnectionMap = new WeakHashMap<>();
-
+//Mã thông báo dịch vụ
     public static ServiceToken bindToService(@NonNull final Context context,
                                              final ServiceConnection callback) {
         Activity realActivity = ((Activity) context).getParent();
@@ -51,6 +51,7 @@ public class MusicPlayerRemote {
         }
 
         final ContextWrapper contextWrapper = new ContextWrapper(realActivity);
+        //Yêu cầu một dịch vụ ứng dụng nhất định được bắt đầu
         contextWrapper.startService(new Intent(contextWrapper, MusicService.class));
 
         final ServiceBinder binder = new ServiceBinder(callback);
@@ -62,7 +63,7 @@ public class MusicPlayerRemote {
         return null;
     }
 
-    public static void unbindFromService(@Nullable final ServiceToken token) {
+    public static void unbindFromService(@Nullable final ServiceToken token) {//hủy liên kết từ dịch vụ
         if (token == null) {
             return;
         }
@@ -82,10 +83,10 @@ public class MusicPlayerRemote {
 
         public ServiceBinder(final ServiceConnection callback) {
             mCallback = callback;
-        }
+        }//kết nối
 
         @Override
-        public void onServiceConnected(final ComponentName className, final IBinder service) {
+        public void onServiceConnected(final ComponentName className, final IBinder service) {//dịch vụ được kết nối
             MusicService.MusicBinder binder = (MusicService.MusicBinder) service;
             musicService = binder.getService();
             if (mCallback != null) {
@@ -94,7 +95,7 @@ public class MusicPlayerRemote {
         }
 
         @Override
-        public void onServiceDisconnected(final ComponentName className) {
+        public void onServiceDisconnected(final ComponentName className) {//ngắt kết nối
             if (mCallback != null) {
                 mCallback.onServiceDisconnected(className);
             }

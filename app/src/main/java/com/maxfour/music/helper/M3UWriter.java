@@ -17,7 +17,7 @@ import java.util.List;
 public class M3UWriter implements M3UConstants {
 
     public static File write(Context context, File dir, Playlist playlist) throws IOException {
-        if (!dir.exists()) //noinspection ResultOfMethodCallIgnored
+        if (!dir.exists())
             dir.mkdirs();
         File file = new File(dir, playlist.name.concat("." + EXTENSION));
 

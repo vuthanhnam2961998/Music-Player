@@ -11,11 +11,11 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//menu bài hát
 public class SongsMenuHelper {
     public static boolean handleMenuClick(@NonNull FragmentActivity activity, @NonNull List<Song> songs, int menuItemId) {
         switch (menuItemId) {
-            case R.id.action_play_next:
+            case R.id.action_play_next: //bài kế tiếp
                 MusicPlayerRemote.playNext(songs);
                 return true;
             case R.id.action_add_to_current_playing:

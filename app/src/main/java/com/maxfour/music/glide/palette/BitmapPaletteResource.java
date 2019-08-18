@@ -25,7 +25,7 @@ public class BitmapPaletteResource implements Resource<BitmapPaletteWrapper> {
     }
 
     @Override
-    public void recycle() {
+    public void recycle() {//Tái sử dụng
         if (!bitmapPool.put(bitmapPaletteWrapper.getBitmap())) {
             bitmapPaletteWrapper.getBitmap().recycle();
         }

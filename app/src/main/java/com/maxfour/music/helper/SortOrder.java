@@ -12,150 +12,152 @@
 package com.maxfour.music.helper;
 
 import android.provider.MediaStore;
-
+/**
+ *Sắp xếp theo thứ tự
+ */
 public final class SortOrder {
 
     /**
-     * This class is never instantiated
+     * Lớp này không được khởi tạo
      */
     public SortOrder() {
     }
 
     /**
-     * Artist sort order entries.
+     * Nghệ sĩ sắp xếp các mục nhập.
      */
     public interface ArtistSortOrder {
-        /* Artist sort order A-Z */
+        /* Thứ tự sắp xếp nghệ sĩ A-Z */
         String ARTIST_A_Z = MediaStore.Audio.Artists.DEFAULT_SORT_ORDER;
 
-        /* Artist sort order Z-A */
+        /* Từ Z-A */
         String ARTIST_Z_A = ARTIST_A_Z + " DESC";
 
-        /* Artist sort order number of songs */
+        /*Nghệ sĩ sắp xếp số lượng bài hát */
         String ARTIST_NUMBER_OF_SONGS = MediaStore.Audio.Artists.NUMBER_OF_TRACKS
                 + " DESC";
 
-        /* Artist sort order number of albums */
+        /* Số lượng album */
         String ARTIST_NUMBER_OF_ALBUMS = MediaStore.Audio.Artists.NUMBER_OF_ALBUMS
                 + " DESC";
     }
 
     /**
-     * Album sort order entries.
+     * Các mục sắp xếp album.
      */
     public interface AlbumSortOrder {
-        /* Album sort order A-Z */
+        /*Từ A-Z */
         String ALBUM_A_Z = MediaStore.Audio.Albums.DEFAULT_SORT_ORDER;
 
-        /* Album sort order Z-A */
+        /* Từ Z-A */
         String ALBUM_Z_A = ALBUM_A_Z + " DESC";
 
-        /* Album sort order songs */
+        /* Theo số bài hát */
         String ALBUM_NUMBER_OF_SONGS = MediaStore.Audio.Albums.NUMBER_OF_SONGS
                 + " DESC";
 
-        /* Album sort order artist */
+        /* theo nghệ sĩ */
         String ALBUM_ARTIST = MediaStore.Audio.Artists.DEFAULT_SORT_ORDER
                 + ", " + MediaStore.Audio.Albums.DEFAULT_SORT_ORDER;
 
-        /* Album sort order year */
+        /* Theo năm */
         String ALBUM_YEAR = MediaStore.Audio.Media.YEAR + " DESC";
     }
 
     /**
-     * Song sort order entries.
+     * Sắp xếp theo bài hát
      */
     public interface SongSortOrder {
-        /* Song sort order A-Z */
+        /* Từ A->Z */
         String SONG_A_Z = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
 
-        /* Song sort order Z-A */
+        /* Z->A */
         String SONG_Z_A = SONG_A_Z + " DESC";
 
-        /* Song sort order artist */
+        /* theo nghệ sĩ */
         String SONG_ARTIST = MediaStore.Audio.Artists.DEFAULT_SORT_ORDER;
 
-        /* Song sort order album */
+        /* theo album */
         String SONG_ALBUM = MediaStore.Audio.Albums.DEFAULT_SORT_ORDER;
 
-        /* Song sort order year */
+        /* theo năm */
         String SONG_YEAR = MediaStore.Audio.Media.YEAR + " DESC";
 
-        /* Song sort order duration */
+        /* theo thời gian */
         String SONG_DURATION = MediaStore.Audio.Media.DURATION + " DESC";
 
-        /* Song sort order date */
+        /* Theo ngày */
         String SONG_DATE = MediaStore.Audio.Media.DATE_ADDED + " DESC";
     }
 
     /**
-     * Album song sort order entries.
+     * sắp xếp bài hát
      */
     public interface AlbumSongSortOrder {
-        /* Album song sort order A-Z */
+        /*  A-Z */
         String SONG_A_Z = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
 
-        /* Album song sort order Z-A */
+        /* Z-A */
         String SONG_Z_A = SONG_A_Z + " DESC";
 
-        /* Album song sort order track list */
+        /* bài hát */
         String SONG_TRACK_LIST = MediaStore.Audio.Media.TRACK + ", "
                 + MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
 
-        /* Album song sort order duration */
+        /* Thời gian */
         String SONG_DURATION = SongSortOrder.SONG_DURATION;
     }
 
     /**
-     * Artist song sort order entries.
+     * nghệ sĩ
      */
     public interface ArtistSongSortOrder {
-        /* Artist song sort order A-Z */
+        /*  A-Z */
         String SONG_A_Z = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
 
-        /* Artist song sort order Z-A */
+        /*  Z-A */
         String SONG_Z_A = SONG_A_Z + " DESC";
 
-        /* Artist song sort order album */
+        /* album */
         String SONG_ALBUM = MediaStore.Audio.Media.ALBUM;
 
-        /* Artist song sort order year */
+        /* năm */
         String SONG_YEAR = MediaStore.Audio.Media.YEAR + " DESC";
 
         /* Artist song sort order duration */
         String SONG_DURATION = MediaStore.Audio.Media.DURATION + " DESC";
 
-        /* Artist song sort order date */
+        /* ngày */
         String SONG_DATE = MediaStore.Audio.Media.DATE_ADDED + " DESC";
     }
 
     /**
-     * Artist album sort order entries.
+     * album.
      */
     public interface ArtistAlbumSortOrder {
-        /* Artist album sort order A-Z */
+        /* A-Z */
         String ALBUM_A_Z = MediaStore.Audio.Albums.DEFAULT_SORT_ORDER;
 
-        /* Artist album sort order Z-A */
+        /*  Z-A */
         String ALBUM_Z_A = ALBUM_A_Z + " DESC";
 
-        /* Artist album sort order year */
+        /*năm */
         String ALBUM_YEAR = MediaStore.Audio.Media.YEAR
                 + " DESC";
 
-        /* Artist album sort order year */
+        /* năm */
         String ALBUM_YEAR_ASC = MediaStore.Audio.Media.YEAR
                 + " ASC";
     }
 
     /**
-     * Genre sort order entries.
+     * theo thể loại
      */
     public interface GenreSortOrder {
-        /* Genre sort order A-Z */
+        /*A-Z */
         String GENRE_A_Z = MediaStore.Audio.Genres.DEFAULT_SORT_ORDER;
 
-        /* Genre sort order Z-A */
+        /*Z-A */
         String ALBUM_Z_A = GENRE_A_Z + " DESC";
     }
 

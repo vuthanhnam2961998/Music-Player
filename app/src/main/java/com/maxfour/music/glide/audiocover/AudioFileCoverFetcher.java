@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;
-
+//Trình tải
 public class AudioFileCoverFetcher implements DataFetcher<InputStream> {
     private final AudioFileCover model;
 
@@ -20,14 +20,14 @@ public class AudioFileCoverFetcher implements DataFetcher<InputStream> {
 
     @Override
     public String getId() {
-        // makes sure we never ever return null here
+        // không null
         return String.valueOf(model.filePath);
     }
 
     @Override
     public InputStream loadData(final Priority priority) throws Exception {
 
-        final MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        final MediaMetadataRetriever retriever = new MediaMetadataRetriever();//Lấy dữ liệu đa phương tiện
         try {
             retriever.setDataSource(model.filePath);
             byte[] picture = retriever.getEmbeddedPicture();
@@ -44,18 +44,17 @@ public class AudioFileCoverFetcher implements DataFetcher<InputStream> {
 
     @Override
     public void cleanup() {
-        // already cleaned up in loadData and ByteArrayInputStream will be GC'd
+        // đã được dọn sạch trong loadData và ByteArrayInputStream sẽ là GC'd
         if (stream != null) {
             try {
                 stream.close();
             } catch (IOException ignore) {
-                // can't do much about it
             }
         }
     }
 
     @Override
     public void cancel() {
-        // cannot cancel
+        // không hủy.
     }
 }

@@ -6,7 +6,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.Collections;
 import java.util.List;
-
+//Xáo trộn
 public class ShuffleHelper {
 
     public static void makeShuffleList(@NonNull List<Song> listToShuffle, final int current) {

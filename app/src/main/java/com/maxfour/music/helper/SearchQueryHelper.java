@@ -12,7 +12,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Trình trợ giúp truy vấn tìm kiếm
 public class SearchQueryHelper {
     private static final String TITLE_SELECTION = "lower(" + MediaStore.Audio.AudioColumns.TITLE + ") = ?";
     private static final String ALBUM_SELECTION = "lower(" + MediaStore.Audio.AudioColumns.ALBUM + ") = ?";
@@ -20,7 +20,7 @@ public class SearchQueryHelper {
     private static final String AND = " AND ";
 
     @NonNull
-    public static List<Song> getSongs(@NonNull final Context context, @NonNull final Bundle extras) {
+    public static List<Song> getSongs(@NonNull final Context context, @NonNull final Bundle extras) {//Nhạc
         final String query = extras.getString(SearchManager.QUERY, null);
         final String artistName = extras.getString(MediaStore.EXTRA_MEDIA_ARTIST, null);
         final String albumName = extras.getString(MediaStore.EXTRA_MEDIA_ALBUM, null);

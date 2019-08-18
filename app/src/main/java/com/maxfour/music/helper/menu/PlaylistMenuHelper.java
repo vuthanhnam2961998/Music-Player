@@ -28,24 +28,31 @@ import java.util.List;
 public class PlaylistMenuHelper {
     public static boolean handleMenuClick(@NonNull AppCompatActivity activity, @NonNull final Playlist playlist, @NonNull MenuItem item) {
         switch (item.getItemId()) {
+            // chơi nhạc
             case R.id.action_play:
                 MusicPlayerRemote.openQueue(new ArrayList<>(getPlaylistSongs(activity, playlist)), 0, true);
                 return true;
+            // phát bài hát này tiếp theo
             case R.id.action_play_next:
                 MusicPlayerRemote.playNext(new ArrayList<>(getPlaylistSongs(activity, playlist)));
                 return true;
+            //thêm vào danh sách đang phát
             case R.id.action_add_to_current_playing:
                 MusicPlayerRemote.enqueue(new ArrayList<>(getPlaylistSongs(activity, playlist)));
                 return true;
+            // thêm vào danh sách
             case R.id.action_add_to_playlist:
                 AddToPlaylistDialog.create(new ArrayList<>(getPlaylistSongs(activity, playlist))).show(activity.getSupportFragmentManager(), "ADD_PLAYLIST");
                 return true;
+            // đổi tên danh sách bài hát
             case R.id.action_rename_playlist:
                 RenamePlaylistDialog.create(playlist.id).show(activity.getSupportFragmentManager(), "RENAME_PLAYLIST");
                 return true;
+            // xoá danh sách bài hát
             case R.id.action_delete_playlist:
                 DeletePlaylistDialog.create(playlist).show(activity.getSupportFragmentManager(), "DELETE_PLAYLIST");
                 return true;
+             // lưu lại
             case R.id.action_save_playlist:
                 new SavePlaylistAsyncTask(activity).execute(playlist);
                 return true;

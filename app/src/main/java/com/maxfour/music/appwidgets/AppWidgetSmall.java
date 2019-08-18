@@ -146,22 +146,22 @@ public class AppWidgetSmall extends BaseAppWidget { //Ứng dụng thu nhỏ
 
         final ComponentName serviceName = new ComponentName(context, MusicService.class);
 
-        // Home
+        // Trang chủ(Home)
         action = new Intent(context, MainActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
         views.setOnClickPendingIntent(R.id.image, pendingIntent);
         views.setOnClickPendingIntent(R.id.media_titles, pendingIntent);
 
-        // Previous song
+        // Bài hát trước
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_REWIND, serviceName);
         views.setOnClickPendingIntent(R.id.button_prev, pendingIntent);
 
-        // Play and pause
+        // Chạy và dừng
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_TOGGLE_PAUSE, serviceName);
         views.setOnClickPendingIntent(R.id.button_toggle_play_pause, pendingIntent);
 
-        // Next song
+        // Bài hát tiếp theo
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_SKIP, serviceName);
         views.setOnClickPendingIntent(R.id.button_next, pendingIntent);
     }

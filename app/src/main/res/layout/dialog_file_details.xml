@@ -43,7 +43,7 @@
 
     <TextView
         android:id="@+id/song_length"
-        android:layout_width="wrap_content"
+        android:layout_width="59dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:paddingTop="16dp"

@@ -64,7 +64,7 @@ public class SleepTimerDialog extends DialogFragment {
 
                     final int minutes = seekArcProgress;
 
-                    PendingIntent pi = makeTimerPendingIntent(PendingIntent.FLAG_CANCEL_CURRENT);
+                    PendingIntent pi = makeTimerPendingIntent(PendingIntent.FLAG_CANCEL_CURRENT);//thực hiện hẹn giờ
 
                     final long nextSleepTimerElapsedTime = SystemClock.elapsedRealtime() + minutes * 60 * 1000;
                     PreferenceUtil.getInstance(getActivity()).setNextSleepTimerElapsedRealtime(nextSleepTimerElapsedTime);
@@ -150,7 +150,7 @@ public class SleepTimerDialog extends DialogFragment {
         return materialDialog;
     }
 
-    private void updateTimeDisplayTime() {
+        private void updateTimeDisplayTime() {//cập nhật và hiển thị thời gian
         timerDisplay.setText(seekArcProgress + getResources().getString(R.string.min));
     }
 
@@ -166,7 +166,7 @@ public class SleepTimerDialog extends DialogFragment {
         return intent.setAction(MusicService.ACTION_QUIT);
     }
 
-    private void updateCancelButton() {
+    private void updateCancelButton() {//Cập nhật nút hủy
         MusicService musicService = MusicPlayerRemote.musicService;
         if (musicService != null && musicService.pendingQuit) {
             materialDialog.setActionButton(DialogAction.NEUTRAL, materialDialog.getContext().getString(R.string.cancel_current_timer));
@@ -175,7 +175,7 @@ public class SleepTimerDialog extends DialogFragment {
         }
     }
 
-    private class TimerUpdater extends CountDownTimer {
+    private class TimerUpdater extends CountDownTimer {//Cập nhật thời gian
         public TimerUpdater() {
             super(PreferenceUtil.getInstance(getActivity()).getNextSleepTimerElapsedRealTime() - SystemClock.elapsedRealtime(), 1000);
         }

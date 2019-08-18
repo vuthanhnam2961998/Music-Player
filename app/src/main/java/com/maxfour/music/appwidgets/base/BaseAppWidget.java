@@ -26,9 +26,6 @@ import com.maxfour.music.util.MusicUtil;
 public abstract class BaseAppWidget extends AppWidgetProvider {
     public static final String NAME = "app_widget";
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager,
                          final int[] appWidgetIds) {
@@ -41,7 +38,7 @@ public abstract class BaseAppWidget extends AppWidgetProvider {
     }
 
     /**
-     * Handle a change notification coming over from
+     * Xử lý thông báo thay đổi đến từ
      * {@link MusicService}
      */
     public void notifyChange(final MusicService service, final String what) {
@@ -62,8 +59,7 @@ public abstract class BaseAppWidget extends AppWidgetProvider {
     }
 
     /**
-     * Check against {@link AppWidgetManager} if there are any instances of this
-     * widget.
+     * Kiểm tra lại {@link AppWidgetManager} nếu có bất kỳ trường hợp trong widgets
      */
     protected boolean hasInstances(final Context context) {
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
@@ -86,13 +82,13 @@ public abstract class BaseAppWidget extends AppWidgetProvider {
         if (drawable == null) return null;
 
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(bitmap);
+        Canvas c = new Canvas(bitmap);//Dùng để tạo hình bởi các điểm ảnh
         drawable.setBounds(0, 0, width, height);
         drawable.draw(c);
 
         Bitmap rounded = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
-        Canvas canvas = new Canvas(rounded);
+        Canvas canvas = new Canvas(rounded);//tròn
         Paint paint = new Paint();
         paint.setShader(new BitmapShader(bitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
         paint.setAntiAlias(true);
@@ -100,7 +96,7 @@ public abstract class BaseAppWidget extends AppWidgetProvider {
 
         return rounded;
     }
-
+//tạo đường tròn
     protected static Path composeRoundedRectPath(RectF rect, float tl, float tr, float bl, float br) {
         Path path = new Path();
         tl = tl < 0 ? 0 : tl;

@@ -26,14 +26,14 @@ import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
-
+//Thẻ phụ tùng ứng dụng
 public class AppWidgetCard extends BaseAppWidget {
     public static final String NAME = "app_widget_card";
 
     private static AppWidgetCard mInstance;
     private static int imageSize = 0;
     private static float cardRadius = 0f;
-    private Target<BitmapPaletteWrapper> target; // for cancellation
+    private Target<BitmapPaletteWrapper> target; // hủy
 
     public static synchronized AppWidgetCard getInstance() {
         if (mInstance == null) {
@@ -42,10 +42,6 @@ public class AppWidgetCard extends BaseAppWidget {
         return mInstance;
     }
 
-    /**
-     * Initialize given widgets to default state, where we launch Music on
-     * default click and hide actions if service not running.
-     */
     protected void defaultAppWidget(final Context context, final int[] appWidgetIds) {
         final RemoteViews appWidgetView = new RemoteViews(context.getPackageName(), R.layout.app_widget_card);
 
@@ -59,16 +55,12 @@ public class AppWidgetCard extends BaseAppWidget {
         pushUpdate(context, appWidgetIds, appWidgetView);
     }
 
-    /**
-     * Update all active widget instances by pushing changes
-     */
     public void performUpdate(final MusicService service, final int[] appWidgetIds) {
         final RemoteViews appWidgetView = new RemoteViews(service.getPackageName(), R.layout.app_widget_card);
 
         final boolean isPlaying = service.isPlaying();
         final Song song = service.getCurrentSong();
 
-        // Set the titles and artwork
         if (TextUtils.isEmpty(song.title) && TextUtils.isEmpty(song.artistName)) {
             appWidgetView.setViewVisibility(R.id.media_titles, View.INVISIBLE);
         } else {
@@ -77,15 +69,14 @@ public class AppWidgetCard extends BaseAppWidget {
             appWidgetView.setTextViewText(R.id.text, getSongArtistAndAlbum(song));
         }
 
-        // Set correct drawable for pause state
+
         int playPauseRes = isPlaying ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp;
         appWidgetView.setImageViewBitmap(R.id.button_toggle_play_pause, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, playPauseRes, MaterialValueHelper.getSecondaryTextColor(service, true))));
 
-        // Set prev/next button drawables
+
         appWidgetView.setImageViewBitmap(R.id.button_next, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_next_white_24dp, MaterialValueHelper.getSecondaryTextColor(service, true))));
         appWidgetView.setImageViewBitmap(R.id.button_prev, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_previous_white_24dp, MaterialValueHelper.getSecondaryTextColor(service, true))));
 
-        // Link actions buttons to intents
         linkButtons(service, appWidgetView);
 
         if (imageSize == 0)
@@ -93,7 +84,6 @@ public class AppWidgetCard extends BaseAppWidget {
         if (cardRadius == 0f)
             cardRadius = service.getResources().getDimension(R.dimen.app_widget_card_radius);
 
-        // Load the album cover async and push the update on completion
         service.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -118,11 +108,9 @@ public class AppWidgetCard extends BaseAppWidget {
                             }
 
                             private void update(@Nullable Bitmap bitmap, int color) {
-                                // Set correct drawable for pause state
                                 int playPauseRes = isPlaying ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp;
                                 appWidgetView.setImageViewBitmap(R.id.button_toggle_play_pause, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, playPauseRes, color)));
 
-                                // Set prev/next button drawables
                                 appWidgetView.setImageViewBitmap(R.id.button_next, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_next_white_24dp, color)));
                                 appWidgetView.setImageViewBitmap(R.id.button_prev, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_previous_white_24dp, color)));
 
@@ -137,9 +125,6 @@ public class AppWidgetCard extends BaseAppWidget {
         });
     }
 
-    /**
-     * Link up various button actions using {@link PendingIntent}.
-     */
     private void linkButtons(final Context context, final RemoteViews views) {
         Intent action;
         PendingIntent pendingIntent;

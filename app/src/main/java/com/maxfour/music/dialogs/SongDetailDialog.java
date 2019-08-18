@@ -29,7 +29,7 @@ import org.jaudiotagger.tag.TagException;
 import java.io.File;
 import java.io.IOException;
 
-public class SongDetailDialog extends DialogFragment {
+public class SongDetailDialog extends DialogFragment {//Chi tiết trong hợp thoại
 
     public static final String TAG = SongDetailDialog.class.getSimpleName();
 
@@ -42,10 +42,11 @@ public class SongDetailDialog extends DialogFragment {
         return dialog;
     }
 
+
     private static Spanned makeTextWithTitle(@NonNull Context context, int titleResId, String text) {
         return Html.fromHtml("<b>" + context.getResources().getString(titleResId) + ": " + "</b>" + text);
     }
-
+//Lấy chuỗi kích thước tệp tin
     private static String getFileSizeString(long sizeInBytes) {
         long fileSizeInKB = sizeInBytes / 1024;
         long fileSizeInMB = fileSizeInKB / 1024;
@@ -54,7 +55,7 @@ public class SongDetailDialog extends DialogFragment {
 
     @NonNull
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState) {//Tạo
         final Activity context = getActivity();
         final Song song = getArguments().getParcelable("song");
 
@@ -65,13 +66,13 @@ public class SongDetailDialog extends DialogFragment {
                 .build();
 
         View dialogView = dialog.getCustomView();
-        final TextView fileName = dialogView.findViewById(R.id.file_name);
-        final TextView filePath = dialogView.findViewById(R.id.file_path);
-        final TextView fileSize = dialogView.findViewById(R.id.file_size);
-        final TextView fileFormat = dialogView.findViewById(R.id.file_format);
-        final TextView songLength = dialogView.findViewById(R.id.song_length);
+        final TextView fileName = dialogView.findViewById(R.id.file_name);//Tên
+        final TextView filePath = dialogView.findViewById(R.id.file_path);//Đường dẫn
+        final TextView fileSize = dialogView.findViewById(R.id.file_size);//Kích thước
+        final TextView fileFormat = dialogView.findViewById(R.id.file_format);//Định dạng
+        final TextView songLength = dialogView.findViewById(R.id.song_length);//độ dài nhạc
         final TextView bitRate = dialogView.findViewById(R.id.bitrate);
-        final TextView samplingRate = dialogView.findViewById(R.id.sampling_rate);
+        final TextView samplingRate = dialogView.findViewById(R.id.sampling_rate);//tỷ lệ mẫu
 
         fileName.setText(makeTextWithTitle(context, R.string.label_file_name, "-"));
         filePath.setText(makeTextWithTitle(context, R.string.label_file_path, "-"));
@@ -97,11 +98,11 @@ public class SongDetailDialog extends DialogFragment {
                     samplingRate.setText(makeTextWithTitle(context, R.string.label_sampling_rate, audioHeader.getSampleRate() + " Hz"));
                 } catch (@NonNull CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
                     Log.e(TAG, "error while reading the song file", e);
-                    // fallback
+                    // dự phòng
                     songLength.setText(makeTextWithTitle(context, R.string.label_song_length, MusicUtil.getReadableDurationString(song.duration)));
                 }
             } else {
-                // fallback
+                // dự phòng
                 fileName.setText(makeTextWithTitle(context, R.string.label_file_name, song.title));
                 songLength.setText(makeTextWithTitle(context, R.string.label_song_length, MusicUtil.getReadableDurationString(song.duration)));
             }

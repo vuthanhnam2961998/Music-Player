@@ -26,15 +26,16 @@ import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
-
+//ApWidget Cô điển
 public class AppWidgetClassic extends BaseAppWidget {
     public static final String NAME = "app_widget_classic";
 
     private static AppWidgetClassic mInstance;
     private static int imageSize = 0;
     private static float cardRadius = 0f;
-    private Target<BitmapPaletteWrapper> target; // for cancellation
+    private Target<BitmapPaletteWrapper> target; // dành cho hủy bỏ
 
+    //synchronized được sử dụng để bảo vệ quyền truy cập vào các tài nguyên được truy cập đồng thời(sử dụng nhiều luồng)
     public static synchronized AppWidgetClassic getInstance() {
         if (mInstance == null) {
             mInstance = new AppWidgetClassic();
@@ -43,8 +44,8 @@ public class AppWidgetClassic extends BaseAppWidget {
     }
 
     /**
-     * Initialize given widgets to default state, where we launch Music on
-     * default click and hide actions if service not running.
+     * Khởi tạo các widget đã cho thành trạng thái mặc định, nơi  khởi chạy Music on
+     * nhấp chuột và ẩn hành động mặc định nếu dịch vụ không chạy.
      */
     protected void defaultAppWidget(final Context context, final int[] appWidgetIds) {
         final RemoteViews appWidgetView = new RemoteViews(context.getPackageName(), R.layout.app_widget_classic);
@@ -60,7 +61,8 @@ public class AppWidgetClassic extends BaseAppWidget {
     }
 
     /**
-     * Update all active widget instances by pushing changes
+     *
+     * Cập nhật tất cả các trường hợp tiện ích hoạt động bằng cách đẩy các thay đổi
      */
     public void performUpdate(final MusicService service, final int[] appWidgetIds) {
         final RemoteViews appWidgetView = new RemoteViews(service.getPackageName(), R.layout.app_widget_classic);
@@ -68,7 +70,7 @@ public class AppWidgetClassic extends BaseAppWidget {
         final boolean isPlaying = service.isPlaying();
         final Song song = service.getCurrentSong();
 
-        // Set the titles and artwork
+        //Đặt tiêu đề và tác phẩm nghệ thuật
         if (TextUtils.isEmpty(song.title) && TextUtils.isEmpty(song.artistName)) {
             appWidgetView.setViewVisibility(R.id.media_titles, View.INVISIBLE);
         } else {
@@ -77,7 +79,7 @@ public class AppWidgetClassic extends BaseAppWidget {
             appWidgetView.setTextViewText(R.id.text, getSongArtistAndAlbum(song));
         }
 
-        // Link actions buttons to intents
+        // Liên kết với các nút intents
         linkButtons(service, appWidgetView);
 
         if (imageSize == 0)

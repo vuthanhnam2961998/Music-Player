@@ -15,7 +15,7 @@ public class App extends Application {
         super.onCreate();
         app = this;
 
-        // default theme
+        //giao diện mặc định
         if (!ThemeStore.isConfigured(this, 1)) {
             ThemeStore.editTheme(this)
                     .primaryColorRes(R.color.md_blue_grey_700)
@@ -23,7 +23,7 @@ public class App extends Application {
                     .commit();
         }
 
-        // Set up dynamic shortcuts
+        // thiết lập dynamic shortcut
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             new DynamicShortcutManager(this).initDynamicShortcuts();
         }

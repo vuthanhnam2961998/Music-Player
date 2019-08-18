@@ -20,7 +20,7 @@ import com.maxfour.music.glide.palette.BitmapPaletteWrapper;
 import com.maxfour.music.model.Song;
 import com.maxfour.music.util.MusicUtil;
 import com.maxfour.music.util.PreferenceUtil;
-
+//Yêu cầu Glide
 public class SongGlideRequest {
 
     public static final DiskCacheStrategy DEFAULT_DISK_CACHE_STRATEGY = DiskCacheStrategy.NONE;
@@ -58,8 +58,8 @@ public class SongGlideRequest {
             return this;
         }
 
-        public DrawableRequestBuilder<GlideDrawable> build() {
-            //noinspection unchecked
+        public DrawableRequestBuilder<GlideDrawable> build() {//Trình tạo yêu cầu có thể vẽ
+            //bỏ chọn không kiểm tra
             return createBaseRequest(requestManager, song, ignoreMediaStore)
                     .diskCacheStrategy(DEFAULT_DISK_CACHE_STRATEGY)
                     .error(DEFAULT_ERROR_IMAGE)
@@ -76,7 +76,7 @@ public class SongGlideRequest {
         }
 
         public BitmapRequestBuilder<?, Bitmap> build() {
-            //noinspection unchecked
+            //bỏ chọn không kiểm tra
             return createBaseRequest(builder.requestManager, builder.song, builder.ignoreMediaStore)
                     .asBitmap()
                     .diskCacheStrategy(DEFAULT_DISK_CACHE_STRATEGY)
@@ -96,7 +96,7 @@ public class SongGlideRequest {
         }
 
         public BitmapRequestBuilder<?, BitmapPaletteWrapper> build() {
-            //noinspection unchecked
+            //bỏ chọn không kiểm tra
             return createBaseRequest(builder.requestManager, builder.song, builder.ignoreMediaStore)
                     .asBitmap()
                     .transcode(new BitmapPaletteTranscoder(context), BitmapPaletteWrapper.class)
@@ -115,7 +115,7 @@ public class SongGlideRequest {
         }
     }
 
-    public static Key createSignature(Song song) {
+    public static Key createSignature(Song song) {//tạo chữ ký
         return new MediaStoreSignature("", song.dateModified, 0);
     }
 }

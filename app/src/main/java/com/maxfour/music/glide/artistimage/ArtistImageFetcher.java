@@ -36,9 +36,9 @@ public class ArtistImageFetcher implements DataFetcher<InputStream> {
     @Override
     public String getId() {
         Log.d("MOSAIC", "get id for" + model.artistName);
-        // never return NULL here!
-        // this id is used to determine whether the image is already cached
-        // we use the artist name as well as the album years + file paths
+        //không bao giờ trả lại NULL ở đây!
+        //id này được sử dụng để xác định xem hình ảnh đã được lưu trữ chưa
+        //chúng tôi sử dụng tên nghệ sĩ cũng như năm album + đường dẫn tệp
         return model.toIdString() + "ignoremediastore:" + ignoreMediaStore;
     }
 

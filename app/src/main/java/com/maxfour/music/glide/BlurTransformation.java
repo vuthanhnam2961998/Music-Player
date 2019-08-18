@@ -19,7 +19,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.maxfour.music.BuildConfig;
 import com.maxfour.music.helper.StackBlur;
 import com.maxfour.music.util.ImageUtil;
-
+//Làm mờ
 public class BlurTransformation extends BitmapTransformation {
     public static final float DEFAULT_BLUR_RADIUS = 5f;
 
@@ -27,7 +27,7 @@ public class BlurTransformation extends BitmapTransformation {
     private float blurRadius;
     private int sampling;
 
-    private void init(Builder builder) {
+    private void init(Builder builder) {//khởi tạo
         this.context = builder.context;
         this.blurRadius = builder.blurRadius;
         this.sampling = builder.sampling;
@@ -54,8 +54,8 @@ public class BlurTransformation extends BitmapTransformation {
         }
 
         /**
-         * @param blurRadius The radius to use. Must be between 0 and 25. Default is 5.
-         * @return the same Builder
+         * @param    blurRadius   để sử dụng. Phải nằm trong khoảng từ 0 đến 25. Mặc định là 5.
+         * @return giống Builder
          */
         public Builder blurRadius(@FloatRange(from = 0.0f, to = 25.0f) float blurRadius) {
             this.blurRadius = blurRadius;
@@ -63,21 +63,17 @@ public class BlurTransformation extends BitmapTransformation {
         }
 
         /**
-         * @param sampling The inSampleSize to use. Must be a power of 2, or 1 for no down sampling or 0 for auto detect sampling. Default is 0.
-         * @return the same Builder
+         * @param sampling Phải là công suất 2 hoặc 1 để không lấy mẫu xuống hoặc 0 để tự động phát hiện lấy mẫu. Mặc định là 0.
+         * @return giống Builder
          */
         public Builder sampling(int sampling) {
             this.sampling = sampling;
             return this;
         }
 
-        /**
-         * @param bitmapPool The BitmapPool to use.
-         * @return the same Builder
-         */
         public Builder bitmapPool(BitmapPool bitmapPool) {
             this.bitmapPool = bitmapPool;
-            return this;
+            return this;//-> Builder
         }
 
         public BlurTransformation build() {

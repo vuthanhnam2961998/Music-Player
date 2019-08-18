@@ -10,7 +10,7 @@ import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.load.model.stream.StreamModelLoader;
 import com.maxfour.music.util.PreferenceUtil;
-
+//Trình tải ảnh nghệ sĩ
 public class ArtistImageLoader implements StreamModelLoader<ArtistImage> {
     private Context context;
 

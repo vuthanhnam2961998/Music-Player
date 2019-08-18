@@ -9,7 +9,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.glide.palette.BitmapPaletteTarget;
 import com.maxfour.music.glide.palette.BitmapPaletteWrapper;
 import com.maxfour.music.util.MusicColorUtil;
-
+//Màu
 public abstract class MusicColoredTarget extends BitmapPaletteTarget {
     public MusicColoredTarget(ImageView view) {
         super(view);
@@ -27,11 +27,11 @@ public abstract class MusicColoredTarget extends BitmapPaletteTarget {
         onColorReady(MusicColorUtil.getColor(resource.getPalette(), getDefaultFooterColor()));
     }
 
-    protected int getDefaultFooterColor() {
+    protected int getDefaultFooterColor() {//Lấy chân màu mặc định
         return ATHUtil.resolveColor(getView().getContext(), R.attr.defaultFooterColor);
     }
 
-    protected int getAlbumArtistFooterColor() {
+    protected int getAlbumArtistFooterColor() {//lấy chân màu mặc định trong album
         return ATHUtil.resolveColor(getView().getContext(), R.attr.cardBackgroundColor);
     }
 

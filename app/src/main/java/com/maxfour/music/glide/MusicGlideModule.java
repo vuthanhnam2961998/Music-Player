@@ -11,7 +11,7 @@ import com.maxfour.music.glide.artistimage.ArtistImage;
 import com.maxfour.music.glide.artistimage.ArtistImageLoader;
 import com.maxfour.music.glide.audiocover.AudioFileCover;
 import com.maxfour.music.glide.audiocover.AudioFileCoverLoader;
-
+//Điều chỉnh âm thanh
 public class MusicGlideModule implements GlideModule {
 
   	@Override
@@ -19,7 +19,7 @@ public class MusicGlideModule implements GlideModule {
     }
 
     @Override
-    public void registerComponents(Context context, Glide glide) {
+    public void registerComponents(Context context, Glide glide) {//Đăng kí các thành phần
         glide.register(AudioFileCover.class, InputStream.class, new AudioFileCoverLoader.Factory());
         glide.register(ArtistImage.class, InputStream.class, new ArtistImageLoader.Factory());
     }

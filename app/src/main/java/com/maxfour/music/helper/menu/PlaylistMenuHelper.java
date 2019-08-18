@@ -73,18 +73,26 @@ public class PlaylistMenuHelper {
             super(context);
         }
 
+        //kiểm tra đã lưu thành công hay chưa
         @Override
         protected String doInBackground(Playlist... params) {
-            try {
+            // nếu thành công thì sẽ lưu vào playlist
+            try
+            {
                 return String.format(App.getInstance().getApplicationContext().getString(R.string.saved_playlist_to), PlaylistsUtil.savePlaylist(App.getInstance().getApplicationContext(), params[0]));
-            } catch (IOException e) {
+            }
+            // ngược lại thì sẽ thông báo lưu thất bại
+            catch (IOException e)
+            {
                 e.printStackTrace();
                 return String.format(App.getInstance().getApplicationContext().getString(R.string.failed_to_save_playlist), e);
             }
         }
 
+        // thông báo cho người dùng biết là đã lưu thành công hay chưa, phương thức LENGTH_LONG mang lại thời gian đủ lâu cho người dùng đọc hết nội dung thông báo
         @Override
-        protected void onPostExecute(String string) {
+        protected void onPostExecute(String string)
+        {
             super.onPostExecute(string);
             Context context = getContext();
             if (context != null) {

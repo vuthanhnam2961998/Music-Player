@@ -27,10 +27,10 @@ import androidx.core.content.ContextCompat;
 import com.maxfour.music.BuildConfig;
 
 /**
- * Used to control headset playback.
- * Single press: pause/resume
- * Double press: next song
- * Triple press: previous song
+ * Được sử dụng để điều khiển phát nhạc qua tai nghe
+ * Nhấn 1 lần: dừng/tiếp tục
+ * Nhấn 2 lần: qua bài kế
+ * Nhấn 3 lần: về bài trước
  */
 public class MediaButtonIntentReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = BuildConfig.DEBUG;
@@ -44,7 +44,7 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
     private static int mClickCounter = 0;
     private static long mLastClickTime = 0;
 
-    @SuppressLint("HandlerLeak") // false alarm, handler is already static
+    @SuppressLint("HandlerLeak")
     private static Handler mHandler = new Handler() {
 
         @Override

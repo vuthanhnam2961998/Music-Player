@@ -100,7 +100,7 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                         }
 
                         if (stopped)
-                            return; // notification has been stopped before loading was finished
+                            return; // Thông báo đã dừng trước khi tải xong
                         updateNotifyModeAndPostNotification(builder.build());
                     }
                 }));

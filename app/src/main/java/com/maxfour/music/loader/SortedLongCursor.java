@@ -27,24 +27,23 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * This cursor basically wraps a song cursor and is given a list of the order of the ids of the
- * contents of the cursor. It wraps the Cursor and simulates the internal cursor being sorted
- * by moving the point to the appropriate spot
+    * con trỏ này được bao bởi con trỏ bài hát và cung cấp một danh sách thứ tự các id của con trỏ\
+    * Nó bao bọc con trỏ và mô phỏng con trỏ bên trong đang được sắp xếp bằng cách di chuyển đến vị trí thích hợp
  */
 public class SortedLongCursor extends AbstractCursor {
-    // cursor to wrap
+    // con trỏ bao bọc
     private final Cursor mCursor;
-    // the map of external indices to internal indices
+    // bản đồ của các chỉ số bên ngoài đến các chỉ số bên trong
     private List<Integer> mOrderedPositions;
-    // this contains the ids that weren't found in the underlying cursor
+    // con trỏ này chứa các id không tìm thấy trong con trỏ bên dưới
     private List<Long> mMissingIds;
-    // this contains the mapped cursor positions and afterwards the extra ids that weren't found
+    // biến này chứa vị trí con trỏ được chiếu đến và sau đó bổ sung id không tìm thấy
     private HashMap<Long, Integer> mMapCursorPositions;
 
     /**
-     * @param cursor     to wrap
-     * @param order      the list of unique ids in sorted order to display
-     * @param columnName the column name of the id to look up in the internal cursor
+     * @param cursor     bao bọc
+     * @param order      danh sách các id được sắp xếp theo thứ tự để hiển thị
+     * @param columnName tên cột của id cần tìm trong con trỏ bên trong
      */
     public SortedLongCursor(final Cursor cursor, final long[] order, final String columnName) {
 
@@ -52,12 +51,10 @@ public class SortedLongCursor extends AbstractCursor {
         mMissingIds = buildCursorPositionMapping(order, columnName);
     }
 
-    /**
-     * This function populates mOrderedPositions with the cursor positions in the order based
-     * on the order passed in
-     *
-     * @param order the target order of the internal cursor
-     * @return returns the ids that aren't found in the underlying cursor
+    /*
+        *Điền vào các vị trí theo thứ tự được thông qua
+        * sắp xếp thứ tự cuối cùng của con trỏ
+        * trả về các id không  tìm thấy
      */
     @NonNull
     private List<Long> buildCursorPositionMapping(@Nullable final long[] order, final String columnName) {
@@ -69,13 +66,13 @@ public class SortedLongCursor extends AbstractCursor {
         final int idPosition = mCursor.getColumnIndex(columnName);
 
         if (mCursor.moveToFirst()) {
-            // first figure out where each of the ids are in the cursor
+           // tìm ra vị trí của tất cả id trong con trỏ
             do {
                 mMapCursorPositions.put(mCursor.getLong(idPosition), mCursor.getPosition());
             } while (mCursor.moveToNext());
 
-            // now create the ordered positions to map to the internal cursor given the
-            // external sort order
+            //sắp xếp các vị trí trong con trỏ
+            // thứ tự sắp xếp bên ngoài
             for (int i = 0; order != null && i < order.length; i++) {
                 final long id = order[i];
                 if (mMapCursorPositions.containsKey(id)) {
@@ -93,14 +90,14 @@ public class SortedLongCursor extends AbstractCursor {
     }
 
     /**
-     * @return the list of ids that weren't found in the underlying cursor
+     * @return trả về các id không tìm thấy trong con trỏ bên dưới
      */
     public List<Long> getMissingIds() {
         return mMissingIds;
     }
 
     /**
-     * @return the list of ids that were in the underlying cursor but not part of the ordered list
+     * @return trả về danh sách các id nằm trong con trỏ bên dưới nhưng lại không nằm trong con trỏ đã được sắp xếp
      */
     @NonNull
     public Collection<Long> getExtraIds() {

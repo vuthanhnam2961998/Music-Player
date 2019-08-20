@@ -48,7 +48,7 @@
     <string name="add_playlist_title">Thêm vào danh sách</string>
     <string name="added_title_to_playing_queue">Thêm 1 bài hát vào danh sách chờ</string>
     <plurals name="added_x_titles_to_playing_queue">
-        <item quantity="other">Đã thêm bài hát<xliff:g id="count">%1$d</xliff:g> vào danh sách phát</item>
+        <item quantity="other">Đã thêm bài hát <xliff:g id="count">%1$d</xliff:g> vào danh sách phát</item>
     </plurals>
     <string name="album">album</string>
     <string name="album_artist">Album nghệ sĩ</string>
@@ -122,7 +122,7 @@
     <string name="genre">Thể loại</string>
     <string name="genres">Thể loại</string>
     <plurals name="inserted_x_songs_into_playlist_x">
-        <item quantity="one">Đã thêm bài hát <xliff:g id="count">%1$d</xliff:g> vào danh sách \"%2$s\"</item>
+        <item quantity="one">Đã thêm bài hát <xliff:g id="count">%1$d</xliff:g> vào danh sách  \"%2$s\"</item>
         <item quantity="other">Đã thêm những bài hát <xliff:g id="count">%1$d</xliff:g>  vào danh sách \"%2$s\"</item>
     </plurals>
     <string name="intro_label">Hướng dẫn</string>

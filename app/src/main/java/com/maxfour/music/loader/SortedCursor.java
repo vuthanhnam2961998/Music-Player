@@ -22,8 +22,7 @@ public class SortedCursor extends AbstractCursor {
     private HashMap<String, Integer> mMapCursorPositions;
 
     /**
-     * @param cursor     to wrap
-     * @param order      the list of unique ids in sorted order to display
+     * @param cursor     to wrap @param order      the list of unique ids in sorted order to display
      * @param columnName the column name of the id to look up in the internal cursor
      */
     public SortedCursor(@NonNull final Cursor cursor, @Nullable final String[] order, final String columnName) {

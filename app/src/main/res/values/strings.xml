@@ -166,6 +166,7 @@
     <string name="not_listed_in_media_store"><![CDATA[<b>%s</b> is not listed in the media store]]></string>
     <string name="nothing_to_scan">Nothing to scan</string>
     <string name="ok">OK</string>
+    <string name="colored_footers">Colored footers</string>
     <string name="only_on_wifi">Only on Wi-Fi</string>
     <string name="open_playing_queue_instruction">Swipe the card in the now playing screen up to reveal the full playing queue</string>
     <string name="past_seven_days">Past 7 days</string>

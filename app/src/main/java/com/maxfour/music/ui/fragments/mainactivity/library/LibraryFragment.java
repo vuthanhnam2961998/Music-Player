@@ -199,11 +199,13 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
                 gridSizeItem.setTitle(R.string.action_grid_size_land);
             }
             setUpGridSizeMenu(absLibraryRecyclerViewCustomGridSizeFragment, gridSizeItem.getSubMenu());
-
+            menu.findItem(R.id.action_colored_footers).setChecked(absLibraryRecyclerViewCustomGridSizeFragment.usePalette());
+            menu.findItem(R.id.action_colored_footers).setEnabled(absLibraryRecyclerViewCustomGridSizeFragment.canUsePalette());
 
             setUpSortOrderMenu(absLibraryRecyclerViewCustomGridSizeFragment, menu.findItem(R.id.action_sort_order).getSubMenu());
         } else {
             menu.removeItem(R.id.action_grid_size);
+            menu.removeItem(R.id.action_colored_footers);
             menu.removeItem(R.id.action_sort_order);
         }
         Activity activity = getActivity();
@@ -225,7 +227,11 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
         Fragment currentFragment = getCurrentFragment();
         if (currentFragment instanceof AbsLibraryPagerRecyclerViewCustomGridSizeFragment) {
             AbsLibraryPagerRecyclerViewCustomGridSizeFragment absLibraryRecyclerViewCustomGridSizeFragment = (AbsLibraryPagerRecyclerViewCustomGridSizeFragment) currentFragment;
-
+            if (item.getItemId() == R.id.action_colored_footers) {
+                item.setChecked(!item.isChecked());
+                absLibraryRecyclerViewCustomGridSizeFragment.setAndSaveUsePalette(item.isChecked());
+                return true;
+            }
             if (handleGridSizeMenuItem(absLibraryRecyclerViewCustomGridSizeFragment, item)) {
                 return true;
             }
@@ -324,6 +330,12 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
             case R.id.action_grid_size_8:
                 gridSize = 8;
                 break;
+        }
+        if (gridSize > 0) {
+            item.setChecked(true);
+            fragment.setAndSaveGridSize(gridSize);
+            toolbar.getMenu().findItem(R.id.action_colored_footers).setEnabled(fragment.canUsePalette());
+            return true;
         }
         return false;
     }

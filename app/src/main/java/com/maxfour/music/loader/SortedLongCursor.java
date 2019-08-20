@@ -98,6 +98,7 @@ public class SortedLongCursor extends AbstractCursor {
 
     /**
      * @return trả về danh sách các id nằm trong con trỏ bên dưới nhưng lại không nằm trong con trỏ đã được sắp xếp
+     *
      */
     @NonNull
     public Collection<Long> getExtraIds() {

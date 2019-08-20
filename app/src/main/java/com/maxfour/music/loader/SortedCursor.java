@@ -16,14 +16,14 @@ public class SortedCursor extends AbstractCursor {
     private final Cursor mCursor;
     // biến khai báo để lấy các giá trị bên ngoài vào nội bộ
     private List<Integer> mOrderedPositions;
-    // this contains the ids that weren't found in the underlying cursor
+    // biến này chứa id khi không tìm thấy trong con trỏ bên dưới
     private List<String> mMissingValues;
-    // this contains the mapped cursor positions and afterwards the extra ids that weren't found
+    // biến này chưa vị trí của con trỏ được bổ sung các id không tìm thấy
     private HashMap<String, Integer> mMapCursorPositions;
 
     /**
-     * @param cursor     to wrap @param order      the list of unique ids in sorted order to display
-     * @param columnName the column name of the id to look up in the internal cursor
+     * @param cursor     to wrap @param order      sắp xếp danh sách các id duy nhất theo thứ tự được sắp xếp để hiển thị
+     * @param columnName tên cột của id cần tra cứu trong con trỏ bên trong
      */
     public SortedCursor(@NonNull final Cursor cursor, @Nullable final String[] order, final String columnName) {
         mCursor = cursor;
@@ -31,11 +31,10 @@ public class SortedCursor extends AbstractCursor {
     }
 
     /**
-     * This function populates mOrderedPositions with the cursor positions in the order based
-     * on the order passed in
+     * Hàm này điền vào vị trí mOrderedP vị trí với vị trí con trỏ theo thứ tự trên thứ tự được truyền vào
      *
-     * @param order the target order of the internal cursor
-     * @return returns the ids that aren't found in the underlying cursor
+     * @param order thứ tự cuối cùng của con trỏ bên trong
+     * @return trả về các id không tìm thấy trong con trỏ bên dưới
      */
     @NonNull
     private List<String> buildCursorPositionMapping(@Nullable final String[] order, final String columnName) {
@@ -47,14 +46,14 @@ public class SortedCursor extends AbstractCursor {
         final int valueColumnIndex = mCursor.getColumnIndex(columnName);
 
         if (mCursor.moveToFirst()) {
-            // first figure out where each of the ids are in the cursor
+            // tìm ra vị trí đầu tiên của mỗi id trong con trỏ
             do {
                 mMapCursorPositions.put(mCursor.getString(valueColumnIndex), mCursor.getPosition());
             } while (mCursor.moveToNext());
 
             if (order != null) {
-                // now create the ordered positions to map to the internal cursor given the
-                // external sort order
+                // tạo các vị trí của con trỏ được chiếu đến bển con trỏ
+                // thứ tự sắp xếp bên ngoài
                 for (final String value : order) {
                     if (mMapCursorPositions.containsKey(value)) {
                         mOrderedPositions.add(mMapCursorPositions.get(value));
@@ -72,14 +71,14 @@ public class SortedCursor extends AbstractCursor {
     }
 
     /**
-     * @return the list of ids that weren't found in the underlying cursor
+     * @return trả về danh sách id trong con trỏ bên dưới
      */
     public List<String> getMissingValues() {
         return mMissingValues;
     }
 
     /**
-     * @return the list of ids that were in the underlying cursor but not part of the ordered list
+     * @return danh sách các id nằm trong con trỏ bên dưới nhưng lại không nằm trong danh sách đã được sắp xếp
      */
     @NonNull
     public Collection<String> getExtraValues() {

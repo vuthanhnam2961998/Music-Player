@@ -47,7 +47,7 @@ public class TopAndRecentlyPlayedSongsLoader {
     public static Cursor makeRecentSongsCursorAndClearUpDatabase(@NonNull final Context context) {
         SortedLongCursor retCursor = makeRecentSongsCursorImpl(context);
 
-        // clean up the databases with any ids not found
+        // Xóa cơ sở dữ liệu không tìm thấy ids
         if (retCursor != null) {
             List<Long> missingIds = retCursor.getMissingIds();
             if (missingIds != null && missingIds.size() > 0) {
@@ -63,7 +63,7 @@ public class TopAndRecentlyPlayedSongsLoader {
     public static Cursor makeTopSongsCursorAndClearUpDatabase(@NonNull final Context context) {
         SortedLongCursor retCursor = makeTopSongsCursorImpl(context);
 
-        // clean up the databases with any ids not found
+        // Xóa cơ sở dữ liệu không tìm thấy ids
         if (retCursor != null) {
             List<Long> missingIds = retCursor.getMissingIds();
             if (missingIds != null && missingIds.size() > 0) {
@@ -77,7 +77,7 @@ public class TopAndRecentlyPlayedSongsLoader {
 
     @Nullable
     private static SortedLongCursor makeRecentSongsCursorImpl(@NonNull final Context context) {
-        // first get the top results ids from the internal database
+        //đầu tiên nhận id kết quả đứng đầu từ cơ sở dữ liệu nội bộ
         Cursor songs = HistoryStore.getInstance(context).queryRecentIds();
 
         try {
@@ -92,7 +92,7 @@ public class TopAndRecentlyPlayedSongsLoader {
 
     @Nullable
     private static SortedLongCursor makeTopSongsCursorImpl(@NonNull final Context context) {
-        // first get the top results ids from the internal database
+        // đầu tiên nhận id kết quả đứng đầu từ cơ sở dữ liệu nội bộ
         Cursor songs = SongPlayCountStore.getInstance(context).getTopPlayedResults(NUMBER_OF_TOP_SONGS);
 
         try {
@@ -108,12 +108,12 @@ public class TopAndRecentlyPlayedSongsLoader {
     @Nullable
     private static SortedLongCursor makeSortedCursor(@NonNull final Context context, @Nullable final Cursor cursor, final int idColumn) {
         if (cursor != null && cursor.moveToFirst()) {
-            // create the list of ids to select against
+            // tạo danh sách id để chọn
             StringBuilder selection = new StringBuilder();
             selection.append(BaseColumns._ID);
             selection.append(" IN (");
 
-            // this songs the order of the ids
+            //bài hát theo thứ tự của id
             long[] order = new long[cursor.getCount()];
 
             long id = cursor.getLong(idColumn);
@@ -130,10 +130,10 @@ public class TopAndRecentlyPlayedSongsLoader {
 
             selection.append(")");
 
-            // get a list of songs with the data given the selection statement
+            // lấy danh sách các bài hát với dữ lịêu được đưa ra xác nhận lựa chọn
             Cursor songCursor = SongLoader.makeSongCursor(context, selection.toString(), null);
             if (songCursor != null) {
-                // now return the wrapped TopSongsCursor to handle sorting given order
+                // trả về TopSongsCursor để xử lý việc sắp xếp thứ tự cho trước
                 return new SortedLongCursor(songCursor, order, BaseColumns._ID);
             }
         }

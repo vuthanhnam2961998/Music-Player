@@ -3,7 +3,7 @@ package com.maxfour.music.model.lyrics;
 import android.util.SparseArray;
 
 public abstract class AbsSynchronizedLyrics extends Lyrics {
-    private static final int TIME_OFFSET_MS = 500; // time adjustment to display line before it actually starts
+    private static final int TIME_OFFSET_MS = 500; // điều chỉnh thời gian để hiển thị dòng trước khi nó thực sự bắt đầu
 
     protected final SparseArray<String> lines = new SparseArray<>();
     protected int offset = 0;

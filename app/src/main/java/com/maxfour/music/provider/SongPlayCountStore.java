@@ -28,8 +28,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * This database songs the number of play counts for an individual song.  This is used to drive
- * the top played songs as well as the playlist images
+   *Cơ sở dữ liệu bài hát này là số lần chơi cho một bài hát cá nhân. Cái này dùng để lấy
+   * các bài hát được phát hàng đầu cũng như hình ảnh danh sách phát
  */
 public class SongPlayCountStore extends SQLiteOpenHelper {
     @Nullable
@@ -38,7 +38,7 @@ public class SongPlayCountStore extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "song_play_count.db";
     private static final int VERSION = 2;
 
-    // interpolator curve applied for measuring the curve
+    // interpolator được áp dụng để đo đường cong
     @NonNull
     private static Interpolator sInterpolator = new AccelerateInterpolator(1.5f);
 

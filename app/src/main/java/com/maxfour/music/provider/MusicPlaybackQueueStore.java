@@ -56,7 +56,6 @@ public class MusicPlaybackQueueStore extends SQLiteOpenHelper {
     }
 
     private void createTable(@NonNull final SQLiteDatabase db, final String tableName) {
-        //noinspection StringBufferReplaceableByString
         StringBuilder builder = new StringBuilder();
         builder.append("CREATE TABLE IF NOT EXISTS ");
         builder.append(tableName);
@@ -100,7 +99,6 @@ public class MusicPlaybackQueueStore extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(@NonNull final SQLiteDatabase db, final int oldVersion, final int newVersion) {
-        // not necessary yet
         db.execSQL("DROP TABLE IF EXISTS " + PLAYING_QUEUE_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + ORIGINAL_PLAYING_QUEUE_TABLE_NAME);
         onCreate(db);
@@ -132,8 +130,8 @@ public class MusicPlaybackQueueStore extends SQLiteOpenHelper {
     }
 
     /**
-     * Clears the existing database and saves the queue into the db so that when the
-     * app is restarted, the songs you were listening to is restored
+     * Xóa cơ sở dữ liệu hiện có và lưu hàng đợi vào database để khi
+     * ứng dụng được khởi động lại, những bài hát bạn đang nghe được khôi phục
      *
      * @param queue the queue to save
      */

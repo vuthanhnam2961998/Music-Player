@@ -217,7 +217,7 @@
     <string name="pref_title_synchronized_lyrics_show"> Hiển thị lời bài hát được đồng bộ hóa </string>
     <string name="primary_color">Màu chủ đạo</string>
     <string name="primary_color_desc">Màu của chủ đề chính</string>
-    <string name="rearrange_playing_queue_instruction">Rearrange the playing queue by dragging a song from its song number</string>
+    <string name="rearrange_playing_queue_instruction">Sắp xếp lại hàng đợi phát bằng cách kéo một bài hát từ số bài hát của nó</string>
     <string name="recently_played">Nhạc đã nghe gần đây</string>
     <string name="remove_action">Xoá</string>
     <string name="remove_cover">Remove cover</string>
@@ -225,7 +225,7 @@
     <string name="remove_song_x_from_playlist"><![CDATA[Xoá bài hát \"<b>%1$s</b>\" từ danh sách này?]]></string>
     <string name="remove_songs_from_playlist_title">Xoá bài hát khỏi danh sách nhạc</string>
     <plurals name="remove_x_songs_from_playlist">
-        <item quantity="other"><![CDATA[Remove <b><xliff:g id="count">%1$d</xliff:g></b> songs from the playlist?]]></item>
+        <item quantity="other"><![CDATA[Xoá <b><xliff:g id="count">%1$d</xliff:g></b> bài hát từ danh sách phát?]]></item>
     </plurals>
     <string name="rename_action">Đặt lại tên</string>
     <string name="rename_playlist_title">Đặt lại tên danh sách nhạc</string>

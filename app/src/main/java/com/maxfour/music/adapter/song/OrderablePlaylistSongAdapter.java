@@ -21,7 +21,7 @@ import com.maxfour.music.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//chọn những bài hát vào danh sách
 @SuppressWarnings("unchecked")
 public class OrderablePlaylistSongAdapter extends PlaylistSongAdapter implements DraggableItemAdapter<OrderablePlaylistSongAdapter.ViewHolder> {
 

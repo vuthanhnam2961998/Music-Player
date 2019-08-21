@@ -18,7 +18,7 @@ import com.maxfour.music.util.NavigationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-//Chạy danh sách bài hát
+//danh sách bài hát
 public class PlaylistSongAdapter extends AbsOffsetSongAdapter {
 
     public PlaylistSongAdapter(AppCompatActivity activity, @NonNull List<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {

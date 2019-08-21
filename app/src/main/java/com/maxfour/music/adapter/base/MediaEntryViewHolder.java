@@ -13,6 +13,7 @@ import com.maxfour.music.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+//baseus là các cơ sở
 //ViewHolder mô tả chế độ xem mục và siêu dữ liệu về vị trí của nó trong RecyclerView.
 //View.OnClickLister bật chế độ gọi lại được gọi khi nhấp
 //View.OnLongClickListener bật chế độ gọi lại được gọi khi nhấp và giữ

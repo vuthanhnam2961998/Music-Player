@@ -20,7 +20,7 @@ import com.maxfour.music.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-//Hàng chờ
+//Hàng chờ  và có thể kéo thả vào vị trí trong hàng chờ
 public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAdapter<PlayingQueueAdapter.ViewHolder> {
 
     private static final int HISTORY = 0;

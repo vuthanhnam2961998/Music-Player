@@ -128,7 +128,7 @@ public class SongAdapter extends AbsMultiSelectAdapter<SongAdapter.ViewHolder, S
             }
         }
     }
-
+//Khi bấm vào sẽ tải bìa album lên
     protected void loadAlbumCover(Song song, final ViewHolder holder) {
         if (holder.image == null) return;
 

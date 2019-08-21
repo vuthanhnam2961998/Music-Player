@@ -4,8 +4,12 @@
     package="com.maxfour.music">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--dòng code số 8 cấp quyền đọc bộ nhớ máy khi lần đầu cài đặt ứng dụng-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--dòng code dưới dùng để ghi vào bộ nhớ máy, để cho phép chức năng lưu danh sách thêm gần đây của ứng dụng
+    vào  bộ  nhớ máy-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--cấp quyền cho ứng dụng truy cập internet để tải xuống ảnh bìa -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />

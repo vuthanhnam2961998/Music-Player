@@ -64,7 +64,6 @@ public class MusicUtil {
                     .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     .setType("audio/*");
         } catch (IllegalArgumentException e) {
-            // TODO the path is most likely not like /storage/emulated/0/... but something like /storage/28C7-75B0/...
             e.printStackTrace();
             Toast.makeText(context, "Could not share this file, I'm aware of the issue.", Toast.LENGTH_SHORT).show();
             return new Intent();
@@ -153,12 +152,6 @@ public class MusicUtil {
         }
     }
 
-    /**
-     * Build a concatenated string from the provided arguments
-     * The intended purpose is to show extra annotations
-     * to a music library item.
-     * Ex: for a given album --> buildInfoString(album.artist, album.songCount)
-     */
     @NonNull
     public static String buildInfoString(@Nullable final String string1, @Nullable final String string2)
     {
@@ -175,8 +168,6 @@ public class MusicUtil {
         return string1 + "  •  " + string2;
     }
 
-    //iTunes uses for example 1002 for song 2 CD1 or 3011 for song 11 CD3.
-    //this method converts those values to normal songnumbers
     public static int getFixedSongNumber(int songNumberToFix) {
         return songNumberToFix % 1000;
     }
@@ -239,8 +230,7 @@ public class MusicUtil {
                     MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection.toString(),
                     null, null);
             if (cursor != null) {
-                // Step 1: Remove selected songs from the current playlist, as well
-                // as from the album art cache
+            // Bước 1: Xóa các bài hát đã chọn khỏi danh sách phát hiện tại, cũng như từ bộ đệm nghệ thuật album
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()) {
                     final int id = cursor.getInt(0);
@@ -249,19 +239,17 @@ public class MusicUtil {
                     cursor.moveToNext();
                 }
 
-                // Step 2: Remove selected songs from the database
+                // Bước 2: xoá các bài hát đã chọn khỏi database
                 context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                         selection.toString(), null);
 
-                // Step 3: Remove files from card
+                // Step 3: Xoá file từ bộ nhớ
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()) {
                     final String name = cursor.getString(1);
-                    try { // File.delete can throw a security exception
+                    try { // xoá file có khả năng ngoại lệ về bảo mật
                         final File f = new File(name);
                         if (!f.delete()) {
-                            // I'm not sure if we'd ever get here (deletion would
-                            // have to fail, but no exception thrown)
                             Log.e("MusicUtils", "Failed to delete file " + name);
                         }
                         cursor.moveToNext();

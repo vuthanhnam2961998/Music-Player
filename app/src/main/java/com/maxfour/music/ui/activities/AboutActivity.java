@@ -25,7 +25,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
     private static String GITHUB = "https://github.com/TinhTienTi/Music-Player";
 
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.app_version)

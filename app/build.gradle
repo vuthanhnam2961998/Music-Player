@@ -44,7 +44,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    // Required for IntroActivity
+    // Cần thiết cho activity đầu vào
     dataBinding {
         enabled = true
     }

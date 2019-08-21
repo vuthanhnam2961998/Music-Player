@@ -22,7 +22,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="12dp"
-            android:fontFamily="@font/product_sans"
+            android:fontFamily="@font/nunito_font"
             android:textStyle="bold"
             android:text="@string/author"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"

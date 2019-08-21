@@ -17,7 +17,8 @@ import com.maxfour.music.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-//Tùy chỉnh thư viện
+
+
 public class LibraryPreferenceDialog extends DialogFragment {
     public static LibraryPreferenceDialog newInstance() {
         return new LibraryPreferenceDialog();

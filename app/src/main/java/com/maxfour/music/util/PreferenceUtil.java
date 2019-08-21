@@ -135,7 +135,7 @@ public final class PreferenceUtil {
         editor.putString(GENERAL_THEME, theme);
         editor.commit();
     }
-
+//Màu giao diện
     @StyleRes
     public static int getThemeResFromPrefValue(String themePrefValue) {
         switch (themePrefValue) {

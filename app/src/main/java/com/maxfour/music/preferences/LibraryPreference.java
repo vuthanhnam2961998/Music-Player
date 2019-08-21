@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEDialogPreference;
-
+//Khởi tạo thư viên
 public class LibraryPreference extends ATEDialogPreference {
     public LibraryPreference(Context context) {
         super(context);

@@ -23,7 +23,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.ui.fragments.player.NowPlayingScreen;
 import com.maxfour.music.util.PreferenceUtil;
 import com.maxfour.music.util.ViewUtil;
-
+//Chọn 1 trong 2 màn hình trong  Giao diện phát nhạc 1 là chọn Thẻ 2 là phẳng
 public class NowPlayingScreenPreferenceDialog extends DialogFragment implements MaterialDialog.SingleButtonCallback, ViewPager.OnPageChangeListener {
 
     private DialogAction whichButtonClicked;

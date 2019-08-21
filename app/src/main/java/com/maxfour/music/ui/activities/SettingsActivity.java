@@ -65,7 +65,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
             if (frag != null) frag.invalidateSettings();
         }
     }
-
+//Màu chủ đạo và màu đặc trưng
     @Override
     public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int selectedColor) {
         switch (dialog.getTitle()) {

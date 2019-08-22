@@ -11,7 +11,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.service.MusicService;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
-
+//Thông báo
 public abstract class PlayingNotification {
 
     private static final int NOTIFICATION_ID = 1;

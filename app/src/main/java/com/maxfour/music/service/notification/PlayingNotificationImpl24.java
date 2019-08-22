@@ -28,7 +28,7 @@ import com.maxfour.music.util.PreferenceUtil;
 import static com.maxfour.music.service.MusicService.ACTION_REWIND;
 import static com.maxfour.music.service.MusicService.ACTION_SKIP;
 import static com.maxfour.music.service.MusicService.ACTION_TOGGLE_PAUSE;
-
+//sử dụng bên trong giao diện người dùng
 public class PlayingNotificationImpl24 extends PlayingNotification {
 
     @Override

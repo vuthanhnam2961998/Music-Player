@@ -15,7 +15,7 @@ import com.kabouzeid.appthemehelper.util.MaterialDialogsUtil;
 import com.maxfour.music.R;
 import com.maxfour.music.util.PreferenceUtil;
 import com.maxfour.music.util.Util;
-
+//Hoạt động chủ đề trừu tượng
 public abstract class AbsThemeActivity extends ATHToolbarActivity {
 
     @Override
@@ -56,19 +56,19 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
     }
 
     public void setStatusbarColorAuto() {
-        // we don't want to use statusbar color because we are doing the color darkening on our own to support KitKat
+        // chúng tôi không muốn sử dụng màu thanh trạng thái vì chúng tôi đang tự làm tối màu để hỗ trợ KitKat
         setStatusbarColor(ThemeStore.primaryColor(this));
     }
 
-    public void setTaskDescriptionColor(@ColorInt int color) {
+    public void setTaskDescriptionColor(@ColorInt int color) {//đặt Màu mô tả tác vụ
         ATH.setTaskDescriptionColor(this, color);
     }
 
-    public void setTaskDescriptionColorAuto() {
+    public void setTaskDescriptionColorAuto() {//Tự động
         setTaskDescriptionColor(ThemeStore.primaryColor(this));
     }
 
-    public void setNavigationbarColor(int color) {
+    public void setNavigationbarColor(int color) {//đặt thanh điều hướng màu
         if (ThemeStore.coloredNavigationBar(this)) {
             ATH.setNavigationbarColor(this, color);
         } else {
@@ -76,9 +76,11 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
         }
     }
 
-    public void setNavigationbarColorAuto() {
+    public void setNavigationbarColorAuto() {//tự động
         setNavigationbarColor(ThemeStore.navigationBarColor(this));
     }
+
+    //đặt thanh trạng thái ánh sáng  và tự động
 
     public void setLightStatusbar(boolean enabled) {
         ATH.setLightStatusbar(this, enabled);

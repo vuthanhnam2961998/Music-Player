@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 import com.maxfour.music.R;
-
+//giới thiệu vừa vào trong phần hướng dẫn
 public class AppIntroActivity extends IntroActivity {
 
     @Override

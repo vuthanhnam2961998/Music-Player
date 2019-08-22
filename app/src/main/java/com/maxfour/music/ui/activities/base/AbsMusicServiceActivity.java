@@ -21,7 +21,7 @@ import com.maxfour.music.service.MusicService;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-
+//dịch vụ âm nhạc trừu tượng
 public abstract class AbsMusicServiceActivity extends AbsBaseActivity implements MusicServiceEventListener {
 
     private final List<MusicServiceEventListener> mMusicServiceEventListeners = new ArrayList<>();
@@ -49,7 +49,7 @@ public abstract class AbsMusicServiceActivity extends AbsBaseActivity implements
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onDestroy() {//HỦY
         super.onDestroy();
         MusicPlayerRemote.unbindFromService(serviceToken);
         if (receiverRegistered) {
@@ -58,20 +58,20 @@ public abstract class AbsMusicServiceActivity extends AbsBaseActivity implements
         }
     }
 
-    public void addMusicServiceEventListener(final MusicServiceEventListener listener) {
+    public void addMusicServiceEventListener(final MusicServiceEventListener listener) {//thêm Trình nghe sự kiện dịch vụ âm nhạc
         if (listener != null) {
             mMusicServiceEventListeners.add(listener);
         }
     }
 
-    public void removeMusicServiceEventListener(final MusicServiceEventListener listener) {
+    public void removeMusicServiceEventListener(final MusicServiceEventListener listener) {//Xóa
         if (listener != null) {
             mMusicServiceEventListeners.remove(listener);
         }
     }
 
     @Override
-    public void onServiceConnected() {
+    public void onServiceConnected() {//Kết nối thiết bị
         if (!receiverRegistered) {
             musicStateReceiver = new MusicStateReceiver(this);
 
@@ -96,7 +96,7 @@ public abstract class AbsMusicServiceActivity extends AbsBaseActivity implements
     }
 
     @Override
-    public void onServiceDisconnected() {
+    public void onServiceDisconnected() {//Khiến bị không kết nối
         if (receiverRegistered) {
             unregisterReceiver(musicStateReceiver);
             receiverRegistered = false;

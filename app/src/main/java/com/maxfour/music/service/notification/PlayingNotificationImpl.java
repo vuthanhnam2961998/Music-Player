@@ -30,7 +30,7 @@ import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
 import com.maxfour.music.util.MusicColorUtil;
 import com.maxfour.music.util.PreferenceUtil;
-
+//Thông báo dưới dạng appwidgets
 public class PlayingNotificationImpl extends PlayingNotification {
 
     private Target<BitmapPaletteWrapper> target;

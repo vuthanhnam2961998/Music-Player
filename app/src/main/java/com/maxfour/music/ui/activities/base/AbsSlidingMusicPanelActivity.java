@@ -28,7 +28,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//Tóm tắt hoạt động bảng điều khiển âm nhạc trượt
 public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivity implements SlidingUpPanelLayout.PanelSlideListener, CardPlayerFragment.Callbacks {
 
     @BindView(R.id.sliding_layout)
@@ -144,7 +144,7 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
                 onPanelExpanded(panel);
                 break;
             case ANCHORED:
-                collapsePanel(); // this fixes a bug where the panel would get stuck for some reason
+                collapsePanel(); //điều này sửa một lỗi mà bảng điều khiển sẽ bị kẹt vì một số lý do
                 break;
         }
     }

@@ -31,7 +31,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Hàng đợi phát nhạc nằm bên dưới nhạc đang phát
 public class MusicPlaybackQueueStore extends SQLiteOpenHelper {
     @Nullable
     private static MusicPlaybackQueueStore sInstance = null;

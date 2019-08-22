@@ -21,7 +21,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//Chỉnh sửa hoạt động bài hát
 public class SongTagEditorActivity extends AbsTagEditorActivity implements TextWatcher {
 
     @BindView(R.id.title1)

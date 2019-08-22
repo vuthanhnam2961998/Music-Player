@@ -87,7 +87,7 @@ public class AppWidgetClassic extends BaseAppWidget {
         if (cardRadius == 0f)
             cardRadius = service.getResources().getDimension(R.dimen.app_widget_card_radius);
 
-        // Load the album cover async and push the update on completion
+        // tải ảnh bìa album và đẩy vào cập nhật hoàn thành
         final Context appContext = service.getApplicationContext();
         service.runOnUiThread(new Runnable() {
             @Override
@@ -113,11 +113,11 @@ public class AppWidgetClassic extends BaseAppWidget {
                             }
 
                             private void update(@Nullable Bitmap bitmap, int color) {
-                                // Set correct drawable for pause state
+                                // Đặt drawable đúng cho trạng thái tạm dừng
                                 int playPauseRes = isPlaying ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp;
                                 appWidgetView.setImageViewBitmap(R.id.button_toggle_play_pause, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, playPauseRes, color)));
 
-                                // Set prev/next button drawables
+                                // đặt icon cho nút bài trước / bài kế tiếp
                                 appWidgetView.setImageViewBitmap(R.id.button_next, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_next_white_24dp, color)));
                                 appWidgetView.setImageViewBitmap(R.id.button_prev, ImageUtil.createBitmap(ImageUtil.getTintedVectorDrawable(service, R.drawable.ic_skip_previous_white_24dp, color)));
 
@@ -141,22 +141,22 @@ public class AppWidgetClassic extends BaseAppWidget {
 
         final ComponentName serviceName = new ComponentName(context, MusicService.class);
 
-        // Home
+        // Trang chủ
         action = new Intent(context, MainActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
         views.setOnClickPendingIntent(R.id.image, pendingIntent);
         views.setOnClickPendingIntent(R.id.media_titles, pendingIntent);
 
-        // Previous song
+        // Bài trước
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_REWIND, serviceName);
         views.setOnClickPendingIntent(R.id.button_prev, pendingIntent);
 
-        // Play and pause
+        // Phát và tạm dừng
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_TOGGLE_PAUSE, serviceName);
         views.setOnClickPendingIntent(R.id.button_toggle_play_pause, pendingIntent);
 
-        // Next song
+        // Bài kế tiếp
         pendingIntent = buildPendingIntent(context, MusicService.ACTION_SKIP, serviceName);
         views.setOnClickPendingIntent(R.id.button_next, pendingIntent);
     }

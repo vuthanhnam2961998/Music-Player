@@ -79,7 +79,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public long getItemId(int position) {
-        // as fragment position is not fixed, we can't use position as id
+        // vì vị trí phân đoạn không cố định, không thể sử dụng vị trí làm id
         return MusicFragments.of(getFragment(position).getClass()).ordinal();
     }
 

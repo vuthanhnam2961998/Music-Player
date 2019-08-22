@@ -26,7 +26,7 @@ import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
-//ApWidget Cô điển
+//ApWidget Cô điển bên ngoài
 public class AppWidgetClassic extends BaseAppWidget {
     public static final String NAME = "app_widget_classic";
 

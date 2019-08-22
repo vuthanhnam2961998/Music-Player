@@ -26,7 +26,7 @@ import com.maxfour.music.util.NavigationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-//Tìm kiếm
+//Thanh công cụ tìm kiếm
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private static final int HEADER = 0;
@@ -46,7 +46,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         this.dataSet = dataSet;
         notifyDataSetChanged();
     }
-
+//Tìm theo đối tượng
     @Override
     public int getItemViewType(int position) {
         if (dataSet.get(position) instanceof Album) return ALBUM;

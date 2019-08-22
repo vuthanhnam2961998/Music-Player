@@ -28,7 +28,7 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-//File nhạc
+//File bài hát khi sử dụng ấn giữ chọn bài hát
 public class SongFileAdapter extends AbsMultiSelectAdapter<SongFileAdapter.ViewHolder, File> implements FastScrollRecyclerView.SectionedAdapter {
 
     private static final int FILE = 0;

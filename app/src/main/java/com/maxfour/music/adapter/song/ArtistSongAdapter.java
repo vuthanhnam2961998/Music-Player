@@ -28,7 +28,7 @@ import com.maxfour.music.util.NavigationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// Bộ chuyển đổi từ nghệ sĩ sang bài hát cần nghe
 public class ArtistSongAdapter extends ArrayAdapter<Song> implements MaterialCab.Callback {
     @Nullable
     private final CabHolder cabHolder;

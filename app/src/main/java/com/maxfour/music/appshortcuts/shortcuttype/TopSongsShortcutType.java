@@ -8,7 +8,7 @@ import android.os.Build;
 import com.maxfour.music.R;
 import com.maxfour.music.appshortcuts.AppShortcutIconGenerator;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
-
+//Chức năng top những bài hát trong danh sách
 @TargetApi(Build.VERSION_CODES.N_MR1)
 public final class TopSongsShortcutType extends BaseShortcutType {//Bài hát tìm kiếm hàng đầu trong đường đi ngắn nhất
     public TopSongsShortcutType(Context context) {

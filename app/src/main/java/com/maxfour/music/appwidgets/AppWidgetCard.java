@@ -26,7 +26,7 @@ import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
-//Thẻ phụ tùng ứng dụng
+//Thẻ phím tắt phía bên ngoài
 public class AppWidgetCard extends BaseAppWidget {
     public static final String NAME = "app_widget_card";
 

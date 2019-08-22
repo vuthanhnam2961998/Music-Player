@@ -39,7 +39,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-//Danh sách
+//Danh sách nhầm để tạo thêm 1 danh sách mới và các hoạt động
 public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewHolder, Playlist> {
 
     private static final int SMART_PLAYLIST = 0;

@@ -16,7 +16,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Tóm tắt thông tin bài hát
 public abstract class AbsOffsetSongAdapter extends SongAdapter {
 
     protected static final int OFFSET_ITEM = 0;
@@ -88,7 +88,7 @@ public abstract class AbsOffsetSongAdapter extends SongAdapter {
         @Override
         protected Song getSong() {
             if (getItemViewType() == OFFSET_ITEM)
-                return Song.EMPTY_SONG; // could also return null, just to be safe return empty song
+                return Song.EMPTY_SONG; //cũng có thể trả về null, chỉ để được an toàn trả lại bài hát trống
             return dataSet.get(getAdapterPosition() - 1);
         }
 

@@ -26,7 +26,7 @@ import com.maxfour.music.model.Song;
 import com.maxfour.music.service.MusicService;
 import com.maxfour.music.ui.activities.MainActivity;
 import com.maxfour.music.util.ImageUtil;
-
+//Phím tắt ở bên ngoài
 public class AppWidgetSmall extends BaseAppWidget { //Ứng dụng thu nhỏ
     public static final String NAME = "app_widget_small";
 

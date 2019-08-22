@@ -19,7 +19,7 @@ import com.maxfour.music.util.SwipeAndDragHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-//Thông tin danh mục
+//Thông tin thể loại
 public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapter.ViewHolder> implements SwipeAndDragHelper.ActionCompletionContract {
     private List<CategoryInfo> categoryInfos;
     private ItemTouchHelper touchHelper;
@@ -76,12 +76,12 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
     @Override
     public void onViewMoved(int oldPosition, int newPosition) {
         CategoryInfo categoryInfo = categoryInfos.get(oldPosition);
-        categoryInfos.remove(oldPosition);
-        categoryInfos.add(newPosition, categoryInfo);
+        categoryInfos.remove(oldPosition);//Xóa
+        categoryInfos.add(newPosition, categoryInfo);//Thêm
         notifyItemMoved(oldPosition, newPosition);
     }
 
-    public void attachToRecyclerView(RecyclerView recyclerView) {
+    public void attachToRecyclerView(RecyclerView recyclerView) {//đính kèm vào
         touchHelper.attachToRecyclerView(recyclerView);
     }
 

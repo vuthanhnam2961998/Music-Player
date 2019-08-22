@@ -8,7 +8,7 @@ import android.os.Build;
 import com.maxfour.music.R;
 import com.maxfour.music.appshortcuts.AppShortcutIconGenerator;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
-
+//Tất cả cách các đối tượng
 @TargetApi(Build.VERSION_CODES.N_MR1)
 public final class ShuffleAllShortcutType extends BaseShortcutType {//Xáo trộn
     public ShuffleAllShortcutType(Context context) {

@@ -8,7 +8,7 @@ import android.os.Build;
 import com.maxfour.music.R;
 import com.maxfour.music.appshortcuts.AppShortcutIconGenerator;
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
-
+//Thêm cuối trong danh sách
 @TargetApi(Build.VERSION_CODES.N_MR1)
 public final class LastAddedShortcutType extends BaseShortcutType {//Thêm cuối
     public LastAddedShortcutType(Context context) {

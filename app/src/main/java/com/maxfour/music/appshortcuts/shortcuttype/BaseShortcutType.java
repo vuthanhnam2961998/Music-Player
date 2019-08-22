@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.maxfour.music.appshortcuts.AppShortcutLauncherActivity;
-
+//Phím tắt cho tất cả các đối tượng
 @TargetApi(Build.VERSION_CODES.N_MR1)
 public abstract class BaseShortcutType {//Phim tắt cơ sở
 

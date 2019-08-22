@@ -13,7 +13,7 @@ import com.maxfour.music.util.MusicUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// Bộ chuyển đổi từ album sang bài hát
 public class AlbumSongAdapter extends SongAdapter {
 
     public AlbumSongAdapter(AppCompatActivity activity, List<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {

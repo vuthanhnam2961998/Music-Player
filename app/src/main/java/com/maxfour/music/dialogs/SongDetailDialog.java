@@ -42,7 +42,6 @@ public class SongDetailDialog extends DialogFragment {//Chi tiết trong hợp t
         return dialog;
     }
 
-
     private static Spanned makeTextWithTitle(@NonNull Context context, int titleResId, String text) {
         return Html.fromHtml("<b>" + context.getResources().getString(titleResId) + ": " + "</b>" + text);
     }

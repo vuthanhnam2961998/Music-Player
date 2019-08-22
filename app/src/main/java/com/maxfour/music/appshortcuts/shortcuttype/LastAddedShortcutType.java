@@ -14,11 +14,9 @@ public final class LastAddedShortcutType extends BaseShortcutType {//Thêm cuố
     public LastAddedShortcutType(Context context) {
         super(context);
     }
-
     public static String getId() {
         return ID_PREFIX + "last_added";
     }
-
     public ShortcutInfo getShortcutInfo() {
         return new ShortcutInfo.Builder(context, getId())
                 .setShortLabel(context.getString(R.string.app_shortcut_last_added_short))

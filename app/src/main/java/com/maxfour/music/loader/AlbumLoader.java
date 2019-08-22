@@ -13,7 +13,7 @@ import com.maxfour.music.util.PreferenceUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//Chức năng trên giao diện  của Album
 public class AlbumLoader {
 
     public static String getSongLoaderSortOrder(Context context) {
@@ -49,7 +49,7 @@ public class AlbumLoader {
         sortSongsBySongNumber(album);
         return album;
     }
-
+//Chia nhiều album của các ca sĩ
     @NonNull
     public static List<Album> splitIntoAlbums(@Nullable final List<Song> songs) {
         List<Album> albums = new ArrayList<>();

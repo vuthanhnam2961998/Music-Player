@@ -11,9 +11,8 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Thêm cuối trong danh sách
 public class LastAddedPlaylist extends AbsSmartPlaylist {
-
     public LastAddedPlaylist(@NonNull Context context) {
         super(context.getString(R.string.last_added), R.drawable.ic_library_add_white_24dp);
     }

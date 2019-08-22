@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.maxfour.music.model.lyrics.Lyrics;
-
+//Lyrics trong bài hát
 public class LyricsDialog extends DialogFragment {
     public static LyricsDialog create(@NonNull Lyrics lyrics) {
         LyricsDialog dialog = new LyricsDialog();

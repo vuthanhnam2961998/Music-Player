@@ -9,7 +9,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.glide.palette.BitmapPaletteTarget;
 import com.maxfour.music.glide.palette.BitmapPaletteWrapper;
 import com.maxfour.music.util.MusicColorUtil;
-//Màu
+// chân màu  của bài hát
 public abstract class MusicColoredTarget extends BitmapPaletteTarget {
     public MusicColoredTarget(ImageView view) {
         super(view);

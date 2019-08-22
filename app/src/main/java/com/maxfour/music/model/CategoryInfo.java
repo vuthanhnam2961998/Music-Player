@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.maxfour.music.R;
-
+//Thông tin thể loại
 public class CategoryInfo implements Parcelable {
     public Category category;
     public boolean visible;

@@ -12,7 +12,7 @@ import com.maxfour.music.provider.HistoryStore;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Nhạc đã nghe gần đây
 public class RecentlyPlayedPlaylist extends AbsSmartPlaylist {
 
     public RecentlyPlayedPlaylist(@NonNull Context context) {

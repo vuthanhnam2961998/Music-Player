@@ -14,7 +14,7 @@ import com.maxfour.music.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Bai hat
 public class SongLoader {
     protected static final String BASE_SELECTION = AudioColumns.IS_MUSIC + "=1" + " AND " + AudioColumns.TITLE + " != ''";
     protected static final String[] BASE_PROJECTION = new String[]{

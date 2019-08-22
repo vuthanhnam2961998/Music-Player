@@ -11,7 +11,7 @@ import com.maxfour.music.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Thêm cuối
 public class LastAddedLoader {
 
     @NonNull

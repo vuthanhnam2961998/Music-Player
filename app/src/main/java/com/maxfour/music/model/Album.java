@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Album
 public class Album implements Parcelable {
     public final List<Song> songs;
 

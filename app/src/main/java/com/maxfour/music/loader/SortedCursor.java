@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collection;
 import java.util.HashMap;
-
+//Sắp xếp Cursor
 public class SortedCursor extends AbstractCursor {
     // con trỏ đến wrap
     private final Cursor mCursor;

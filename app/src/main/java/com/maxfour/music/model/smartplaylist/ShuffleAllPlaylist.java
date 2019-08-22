@@ -11,7 +11,7 @@ import com.maxfour.music.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Ngẫu nhiên danh sách
 public class ShuffleAllPlaylist extends AbsSmartPlaylist {
 
     public ShuffleAllPlaylist(@NonNull Context context) {
@@ -26,7 +26,7 @@ public class ShuffleAllPlaylist extends AbsSmartPlaylist {
 
     @Override
     public void clear(@NonNull Context context) {
-        // Shuffle all is not a real "Smart Playlist"
+        //Xáo trộn tất cả không phải là một "Danh sách phát thông minh" thực sự
     }
 
     @Override

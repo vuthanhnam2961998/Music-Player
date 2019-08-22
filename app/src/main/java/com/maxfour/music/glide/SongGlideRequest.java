@@ -20,7 +20,6 @@ import com.maxfour.music.glide.palette.BitmapPaletteWrapper;
 import com.maxfour.music.model.Song;
 import com.maxfour.music.util.MusicUtil;
 import com.maxfour.music.util.PreferenceUtil;
-//Yêu cầu Glide
 public class SongGlideRequest {
 
     public static final DiskCacheStrategy DEFAULT_DISK_CACHE_STRATEGY = DiskCacheStrategy.NONE;
@@ -115,7 +114,7 @@ public class SongGlideRequest {
         }
     }
 
-    public static Key createSignature(Song song) {//tạo chữ ký
+    public static Key createSignature(Song song) {
         return new MediaStoreSignature("", song.dateModified, 0);
     }
 }

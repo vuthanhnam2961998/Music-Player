@@ -23,7 +23,7 @@ import com.maxfour.music.R;
 import com.maxfour.music.ui.fragments.player.NowPlayingScreen;
 import com.maxfour.music.util.PreferenceUtil;
 import com.maxfour.music.util.ViewUtil;
-
+//Giao diện phát nhạc trong cài đặt rồi đẩy sang adapter
 public class NowPlayingScreenPreferenceDialog extends DialogFragment implements MaterialDialog.SingleButtonCallback, ViewPager.OnPageChangeListener {
 
     private DialogAction whichButtonClicked;

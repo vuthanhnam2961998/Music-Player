@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
-
+//Thông báo không đồng bộ
 public abstract class DialogAsyncTask<Params, Progress, Result> extends WeakContextAsyncTask<Params, Progress, Result> {
     private final int delay;
     private WeakReference<Dialog> dialogWeakReference;

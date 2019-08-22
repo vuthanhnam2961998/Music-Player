@@ -1,5 +1,5 @@
 package com.maxfour.music.interfaces;
-
+//Thứ tự sắp xếp theo giao diện
 public interface LoaderIds {
     int ALBUM_DETAIL_ACTIVITY = 1;
     int ARTIST_DETAIL_ACTIVITY = 2;

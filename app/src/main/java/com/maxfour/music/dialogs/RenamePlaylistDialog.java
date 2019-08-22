@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.maxfour.music.R;
 import com.maxfour.music.util.PlaylistsUtil;
-//Đổi tên hộp thoại
+//Đặt lại tên thư thoại
 public class RenamePlaylistDialog extends DialogFragment {
 
     private static final String PLAYLIST_ID = "playlist_id";

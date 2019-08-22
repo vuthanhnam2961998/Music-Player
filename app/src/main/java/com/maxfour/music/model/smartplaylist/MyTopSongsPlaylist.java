@@ -12,7 +12,7 @@ import com.maxfour.music.provider.SongPlayCountStore;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Những bài hát hàng đầu trong danh sách
 public class MyTopSongsPlaylist extends AbsSmartPlaylist {
 
     public MyTopSongsPlaylist(@NonNull Context context) {

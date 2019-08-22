@@ -29,7 +29,7 @@ import com.triggertrap.seekarc.SeekArc;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+//Thời gian tự động tắt nhạc
 public class SleepTimerDialog extends DialogFragment {
     @BindView(R.id.seek_arc)
     SeekArc seekArc;

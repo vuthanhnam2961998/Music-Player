@@ -91,7 +91,7 @@ public class Song implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
-    }
+    }//mô tả nội dung
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -122,7 +122,7 @@ public class Song implements Parcelable {
         this.artistName = in.readString();
     }
 
-    public static final Creator<Song> CREATOR = new Creator<Song>() {
+    public static final Creator<Song> CREATOR = new Creator<Song>() {//Chứa bài hát
         public Song createFromParcel(Parcel source) {
             return new Song(source);
         }

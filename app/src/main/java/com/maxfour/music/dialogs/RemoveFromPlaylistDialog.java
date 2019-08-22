@@ -14,7 +14,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Xóa danh sách
 public class RemoveFromPlaylistDialog extends DialogFragment {
 
     @NonNull

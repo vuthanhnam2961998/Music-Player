@@ -19,7 +19,7 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.maxfour.music.glide.audiocover.AudioFileCoverUtils;
 import com.maxfour.music.util.ImageUtil;
-//Trình tải hình nhạc sĩ
+//Tìm nạp hình nhạc sĩ
 public class ArtistImageFetcher implements DataFetcher<InputStream> {
 
     private final ArtistImage model;

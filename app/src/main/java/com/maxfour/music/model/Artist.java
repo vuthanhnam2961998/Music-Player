@@ -9,7 +9,7 @@ import com.maxfour.music.util.MusicUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Nghệ sĩ
 public class Artist implements Parcelable {
     public static final String UNKNOWN_ARTIST_DISPLAY_NAME = "Unknown Artist";
 

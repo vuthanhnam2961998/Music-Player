@@ -11,7 +11,7 @@ import com.maxfour.music.model.PlaylistSong;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Danh sách bài hát
 public class PlaylistSongLoader {
 
     @NonNull

@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
-
+//Từ chối đồng bộ
 public abstract class WeakContextAsyncTask<Params, Progress, Result> extends AsyncTask<Params, Progress, Result> {
     private WeakReference<Context> contextWeakReference;
 

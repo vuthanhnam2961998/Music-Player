@@ -2,7 +2,7 @@ package com.maxfour.music.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
+//Danh sách
 public class Playlist implements Parcelable {
     public final int id;
     public final String name;

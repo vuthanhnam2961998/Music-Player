@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEDialogPreference;
-
+//Các chức năng màn hình chính
 public class NowPlayingScreenPreference extends ATEDialogPreference {
     public NowPlayingScreenPreference(Context context) {
         super(context);

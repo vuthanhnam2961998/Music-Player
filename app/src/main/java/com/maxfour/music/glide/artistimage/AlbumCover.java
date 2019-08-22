@@ -3,6 +3,7 @@ package com.maxfour.music.glide.artistimage;
 /**
  * Used to define the artist cover
  */
+//Ảnh album
 public class AlbumCover {
 
     private int year;

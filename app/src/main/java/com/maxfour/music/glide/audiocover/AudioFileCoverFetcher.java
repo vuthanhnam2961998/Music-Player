@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;
-//Trình tải
+//"Tìm nạp" đề cập đến việc lấy giá trị và sử dụng nó trực tiếp trong một hoạt động.
 public class AudioFileCoverFetcher implements DataFetcher<InputStream> {
     private final AudioFileCover model;
 

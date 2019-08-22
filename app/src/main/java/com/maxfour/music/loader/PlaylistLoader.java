@@ -13,7 +13,7 @@ import com.maxfour.music.model.Playlist;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Danh sách
 public class PlaylistLoader {
 
     @NonNull
@@ -42,7 +42,7 @@ public class PlaylistLoader {
                 }
         ));
     }
-
+//Danh sách phát
     @NonNull
     public static Playlist getPlaylist(@Nullable final Cursor cursor) {
         Playlist playlist = new Playlist();
@@ -54,7 +54,7 @@ public class PlaylistLoader {
             cursor.close();
         return playlist;
     }
-
+//nhận tất cả danh sách phát
     @NonNull
     public static List<Playlist> getAllPlaylists(@Nullable final Cursor cursor) {
         List<Playlist> playlists = new ArrayList<>();
@@ -76,6 +76,7 @@ public class PlaylistLoader {
         return new Playlist(id, name);
     }
 
+    //tạo danh sách
     @Nullable
     public static Cursor makePlaylistCursor(@NonNull final Context context, final String selection, final String[] values) {
         try {

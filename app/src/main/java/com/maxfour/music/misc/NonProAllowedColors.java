@@ -1,7 +1,7 @@
 package com.maxfour.music.misc;
 
 import android.graphics.Color;
-
+//Bảng màu sắc sử dụng trong màu đặc trưng và mày chủ đạo
 public interface NonProAllowedColors {
 
     int[] PRIMARY_COLORS =

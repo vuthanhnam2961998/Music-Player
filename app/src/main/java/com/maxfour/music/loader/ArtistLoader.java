@@ -13,7 +13,7 @@ import com.maxfour.music.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Nghệ sĩ
 public class ArtistLoader {
     public static String getSongLoaderSortOrder(Context context) {
         return PreferenceUtil.getInstance(context).getArtistSortOrder() + ", " + PreferenceUtil.getInstance(context).getArtistAlbumSortOrder() + ", " + PreferenceUtil.getInstance(context).getAlbumSongSortOrder();

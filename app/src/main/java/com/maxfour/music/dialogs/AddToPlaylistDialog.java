@@ -15,7 +15,7 @@ import com.maxfour.music.util.PlaylistsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Thêm danh sách
 public class AddToPlaylistDialog extends DialogFragment {
 
     @NonNull

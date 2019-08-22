@@ -3,7 +3,7 @@ package com.maxfour.music.glide.palette;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.util.Util;
-
+//Tài nguyên bảng màu
 public class BitmapPaletteResource implements Resource<BitmapPaletteWrapper> {
 
     private final BitmapPaletteWrapper bitmapPaletteWrapper;

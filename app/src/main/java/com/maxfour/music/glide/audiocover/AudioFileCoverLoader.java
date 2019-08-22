@@ -10,7 +10,7 @@ import com.bumptech.glide.load.model.stream.StreamModelLoader;
 
 import java.io.InputStream;
 
-//Tải
+//"Tải" có nghĩa là lấy giá trị và gán nó vào một thanh ghi hoặc biến
 public class AudioFileCoverLoader implements StreamModelLoader<AudioFileCover> {
 
     @Override

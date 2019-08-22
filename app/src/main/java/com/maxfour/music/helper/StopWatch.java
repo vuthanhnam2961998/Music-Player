@@ -66,8 +66,8 @@ public class StopWatch {//Đồng hồ bấm giờ
         }
     }
 
-    @Override
-    public String toString() {
-        return String.format(Locale.getDefault(), "%d millis", getElapsedTime());
-    }
+    //@Override
+    //public String toString() {
+     //   return String.format(Locale.getDefault(), "%d millis", getElapsedTime());
+    //}
 }

@@ -250,7 +250,7 @@
     <string name="sort_order_album">Album</string>
     <string name="sort_order_artist">Nghệ sĩ</string>
     <string name="sort_order_year">Năm</string>
-    <string name="sort_order_z_a">Giảm dần</string>
+    <string name="sort_order_z_a">Giảm dần</string>label_details
     <string name="the_audio_file">Các tập tin âm thanh</string>
     <string name="this_month">Tháng này</string>
     <string name="this_week">Tuần này</string>

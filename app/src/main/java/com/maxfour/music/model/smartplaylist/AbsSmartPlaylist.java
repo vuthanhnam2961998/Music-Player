@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.maxfour.music.R;
 import com.maxfour.music.model.AbsCustomPlaylist;
-
+//Danh sách được tạo
 public abstract class AbsSmartPlaylist extends AbsCustomPlaylist {
     @DrawableRes
     public final int iconRes;

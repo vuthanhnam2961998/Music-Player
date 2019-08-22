@@ -13,7 +13,7 @@ import com.maxfour.music.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Thể loại
 public class GenreLoader {
 
     @NonNull
